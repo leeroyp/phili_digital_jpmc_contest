@@ -1,0 +1,19 @@
+{
+  "name": "contest-infra",
+  "private": true,
+  "scripts": {
+    "deploy:dev": "cdk deploy --context stage=dev",
+    "deploy:prod": "cdk deploy --context stage=prod"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.160.0",
+    "constructs": "^10.3.0"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.160.0",
+    "esbuild": "^0.23.0",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
