@@ -156,7 +156,7 @@ export default function Page() {
           </style>
           <div className="hero-content">
           {/* VISA | FIFA Logo */}
-          <div className="flex-container" style={{ display: "flex", alignItems: "center", gap: "clamp(8px, 2vw, 16px)", marginBottom: "12px", justifyContent: window.innerWidth <= 475 ? "center" : "flex-start" }}>
+          <div className="flex-container" style={{ display: "flex", alignItems: "center", gap: "clamp(8px, 2vw, 16px)", marginBottom: "12px" }}>
             <span style={{ fontSize: "clamp(28px, 6vw, 48px)", fontWeight: "900", letterSpacing: "-2px", fontStyle: "italic" }}>VISA</span>
             <div style={{ width: "2px", height: "clamp(32px, 5vw, 48px)", backgroundColor: "#ffffff", opacity: 0.6 }}></div>
             <div style={{ width: "clamp(40px, 7vw, 56px)", height: "clamp(48px, 8vw, 64px)", backgroundColor: "#ffffff", borderRadius: "8px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "6px" }}>
@@ -180,12 +180,17 @@ export default function Page() {
           </p>
 
           {/* RSVP Button and Moneris Logo */}
-          <div className="flex-container" style={{ display: "flex", alignItems: "center", gap: "clamp(20px, 8vw, 80px)", flexWrap: "wrap", justifyContent: window.innerWidth <= 475 ? "center" : "flex-start" }}>
+          <div className="flex-container" style={{ display: "flex", alignItems: "center", gap: "clamp(20px, 8vw, 80px)", flexWrap: "wrap" }}>
             <button 
               onClick={() => {
                 setShowForm(true);
                 setTimeout(() => {
-                  document.getElementById('contest-form')?.scrollIntoView({ behavior: 'smooth' });
+                  const formElement = document.getElementById('contest-form');
+                  if (formElement) {
+                    const yOffset = -80; // Offset for header + spacing
+                    const y = formElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                  }
                 }, 100);
               }}
               style={{ 
@@ -224,7 +229,7 @@ export default function Page() {
           </p>
 
           {/* Moneris Logo Only */}
-          <div className="flex-container" style={{ display: "flex", alignItems: "center", justifyContent: window.innerWidth <= 475 ? "center" : "flex-start" }}>
+          <div className="flex-container" style={{ display: "flex", alignItems: "center" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <div style={{ width: "clamp(32px, 4vw, 40px)", height: "clamp(32px, 4vw, 40px)", borderRadius: "50%", backgroundColor: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <span style={{ color: "#C8102E", fontWeight: "900", fontSize: "clamp(16px, 2.5vw, 20px)" }}>M</span>
