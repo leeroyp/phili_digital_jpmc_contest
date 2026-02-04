@@ -12,7 +12,6 @@ type FormState = {
   companyName: string;
   email: string;
   phone: string;
-  consent: boolean;
   optIn: boolean;
 };
 
@@ -35,7 +34,6 @@ export default function Page() {
     companyName: "",
     email: "",
     phone: "",
-    consent: false,
     optIn: false,
   });
 
@@ -88,7 +86,6 @@ export default function Page() {
     if (!form.lastName.trim()) return "Last name is required";
     if (!form.email.trim()) return "Email is required";
     if (!form.phone.trim()) return "Phone is required";
-    if (!form.consent) return "You must agree to the contest rules and privacy policy";
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -111,10 +108,8 @@ export default function Page() {
     <>
       {/* White Header */}
       <header style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #e5e5e5", padding: "12px 24px", position: "sticky", top: 0, zIndex: 100, height: "64px", display: "flex", alignItems: "center" }}>
-        <div style={{ width: "100%", display: "flex", alignItems: "center", maxWidth: "100%" }}>
-          <div style={{ fontSize: "20px", fontWeight: "900", color: "#1434CB", letterSpacing: "-0.5px", cursor: "pointer" }}>
-            VISA
-          </div>
+        <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "flex-start", maxWidth: "100%" }}>
+          <img src="/visa-logo-header.png" alt="VISA | FIFA" style={{ height: "56px", width: "auto", cursor: "pointer" }} />
         </div>
       </header>
 
@@ -142,40 +137,36 @@ export default function Page() {
           color: "#ffffff", 
           marginLeft: "clamp(0px, -10vw, -150px)",
         }}>
-          <style>
-            {`
-              @media (max-width: 475px) {
-                .hero-content > * {
-                  text-align: center !important;
-                }
-                .hero-content .flex-container {
-                  justify-content: center !important;
-                }
+          <style jsx>{`
+            @media (max-width: 475px) {
+              .hero-content > * {
+                text-align: center !important;
               }
-            `}
-          </style>
+              .hero-content .flex-container {
+                justify-content: center !important;
+              }
+            }
+            @media (min-width: 476px) {
+              .hero-content .flex-container {
+                justify-content: flex-start !important;
+              }
+            }
+          `}</style>
           <div className="hero-content">
           {/* VISA | FIFA Logo */}
-          <div className="flex-container" style={{ display: "flex", alignItems: "center", gap: "clamp(8px, 2vw, 16px)", marginBottom: "12px" }}>
-            <span style={{ fontSize: "clamp(28px, 6vw, 48px)", fontWeight: "900", letterSpacing: "-2px", fontStyle: "italic" }}>VISA</span>
-            <div style={{ width: "2px", height: "clamp(32px, 5vw, 48px)", backgroundColor: "#ffffff", opacity: 0.6 }}></div>
-            <div style={{ width: "clamp(40px, 7vw, 56px)", height: "clamp(48px, 8vw, 64px)", backgroundColor: "#ffffff", borderRadius: "8px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "6px" }}>
-              <div style={{ fontSize: "clamp(16px, 3vw, 24px)", marginBottom: "2px" }}>🏆</div>
-              <span style={{ fontSize: "clamp(9px, 1.5vw, 12px)", fontWeight: "900", color: "#000", letterSpacing: "-0.5px" }}>FIFA</span>
-            </div>
+          <div className="flex-container" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "8px", marginBottom: "clamp(24px, 4vw, 48px)" }}>
+            <img src="/visa-logo-hero.png" alt="VISA | FIFA" style={{ height: "clamp(56px, 10vw, 100px)", width: "auto" }} />
           </div>
-
-          <p style={{ fontSize: "clamp(11px, 1.8vw, 14px)", marginBottom: "clamp(24px, 4vw, 48px)", opacity: 0.9, fontWeight: "300" }}>Worldwide Partner</p>
 
           {!showForm && !formSubmitted && (
             <>
           {/* RSVP TODAY Heading */}
-          <h1 style={{ fontSize: "clamp(36px, 8vw, 72px)", fontWeight: "900", lineHeight: "1.1", marginBottom: "clamp(16px, 3vw, 32px)", textTransform: "uppercase", letterSpacing: "clamp(1px, 0.3vw, 3px)", textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}>
+          <h1 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(36px, 8vw, 72px)", fontWeight: "900", lineHeight: "1.1", marginBottom: "clamp(16px, 3vw, 32px)", textTransform: "uppercase", letterSpacing: "clamp(1px, 0.3vw, 3px)", textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}>
             RSVP TODAY
           </h1>
 
           {/* Description Text */}
-          <p style={{ fontFamily: '"Inter", Helvetica, Arial, sans-serif', fontSize: "clamp(14px, 2.5vw, 22px)", lineHeight: "clamp(20px, 3.5vw, 32px)", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px" }}>
+          <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "clamp(14px, 2.5vw, 22px)", lineHeight: "clamp(20px, 3.5vw, 32px)", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px" }}>
             Ut dollabo repraep ellatempore velignis doleni tecata volecaborro moNum quatum dollab im aut et molorrum delessim velique consequaest, core
           </p>
 
@@ -184,14 +175,6 @@ export default function Page() {
             <button 
               onClick={() => {
                 setShowForm(true);
-                setTimeout(() => {
-                  const formElement = document.getElementById('contest-form');
-                  if (formElement) {
-                    const yOffset = -80; // Offset for header + spacing
-                    const y = formElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                    window.scrollTo({ top: y, behavior: 'smooth' });
-                  }
-                }, 100);
               }}
               style={{ 
                 backgroundColor: "#E84E1B", 
@@ -204,7 +187,8 @@ export default function Page() {
                 cursor: "pointer",
                 textTransform: "uppercase",
                 letterSpacing: "clamp(1px, 0.2vw, 2px)",
-                boxShadow: "0 4px 8px rgba(0,0,0,0.3)"
+                boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
+                fontFamily: '"FWC26-NormalRegular", sans-serif'
               }}
             >
               RSVP
@@ -212,10 +196,7 @@ export default function Page() {
 
             {/* Moneris Logo */}
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <div style={{ width: "clamp(32px, 4vw, 40px)", height: "clamp(32px, 4vw, 40px)", borderRadius: "50%", backgroundColor: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ color: "#C8102E", fontWeight: "900", fontSize: "clamp(16px, 2.5vw, 20px)" }}>M</span>
-              </div>
-              <span style={{ fontSize: "clamp(16px, 2.5vw, 20px)", fontWeight: "600" }}>Moneris</span>
+              <img src="/moneris-logo.png" alt="Moneris" style={{ height: "clamp(32px, 4vw, 48px)", width: "auto" }} />
             </div>
           </div>
           </>
@@ -224,18 +205,13 @@ export default function Page() {
           {formSubmitted && (
             <>
           {/* Thank You Message */}
-          <p style={{ fontFamily: '"Inter", Helvetica, Arial, sans-serif', fontSize: "clamp(14px, 2.5vw, 22px)", lineHeight: "clamp(20px, 3.5vw, 32px)", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px" }}>
+          <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "clamp(14px, 2.5vw, 22px)", lineHeight: "clamp(20px, 3.5vw, 32px)", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px" }}>
             Thank you for registering for the FIFA World Cup 2026™ thanks to Visa. You will receive an email momentarily with more information on how to access your tickets.
           </p>
 
           {/* Moneris Logo Only */}
           <div className="flex-container" style={{ display: "flex", alignItems: "center" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <div style={{ width: "clamp(32px, 4vw, 40px)", height: "clamp(32px, 4vw, 40px)", borderRadius: "50%", backgroundColor: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ color: "#C8102E", fontWeight: "900", fontSize: "clamp(16px, 2.5vw, 20px)" }}>M</span>
-              </div>
-              <span style={{ fontSize: "clamp(16px, 2.5vw, 20px)", fontWeight: "600" }}>Moneris</span>
-            </div>
+            <img src="/moneris-logo.png" alt="Moneris" style={{ height: "clamp(32px, 4vw, 48px)", width: "auto" }} />
           </div>
           </>
           )}
@@ -256,16 +232,25 @@ export default function Page() {
             border: "1px solid rgba(255, 255, 255, 0.2)",
           }}>
             <h1 style={{ 
+              fontFamily: '"FWC26-CondensedBlack", sans-serif',
               fontSize: "clamp(28px, 4vw, 36px)", 
               fontWeight: "700", 
               marginBottom: "32px", 
               color: "#ffffff",
               textAlign: "center"
-            }}>Contest Entry</h1>
+            }}>Registration</h1>
 
             <form onSubmit={onSubmit} style={{ display: "grid", gap: 20 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
+          <style jsx>{`
+            @media (min-width: 768px) {
+              .name-row {
+                grid-template-columns: 1fr 1fr !important;
+              }
+            }
+          `}</style>
+          <div className="name-row" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
             First Name
             <input value={form.firstName} onChange={(e) => onChange("firstName", e.target.value)} required
               style={{ 
@@ -280,7 +265,7 @@ export default function Page() {
                 color: "#333"
               }} />
           </label>
-          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600" }}>
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
             Last Name
             <input value={form.lastName} onChange={(e) => onChange("lastName", e.target.value)} required
               style={{ 
@@ -295,10 +280,11 @@ export default function Page() {
                 color: "#333"
               }} />
           </label>
+          </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600" }}>
+        <div className="name-row" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
             Guest First Name
             <input value={form.guestFirstName} onChange={(e) => onChange("guestFirstName", e.target.value)}
               style={{ 
@@ -313,7 +299,7 @@ export default function Page() {
                 color: "#333"
               }} />
           </label>
-          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600" }}>
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
             Guest Last Name
             <input value={form.guestLastName} onChange={(e) => onChange("guestLastName", e.target.value)}
               style={{ 
@@ -330,8 +316,8 @@ export default function Page() {
           </label>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-        <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600" }}>
+        <div className="name-row" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
+        <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
           Company Name
           <input value={form.companyName} onChange={(e) => onChange("companyName", e.target.value)}
             style={{ 
@@ -348,7 +334,7 @@ export default function Page() {
         </label>
 
         
-          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600" }}>
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
             Email Address
             <input type="email" value={form.email} onChange={(e) => onChange("email", e.target.value)} required
               style={{ 
@@ -365,7 +351,7 @@ export default function Page() {
           </label>
           </div>
 
-          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600" }}>
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
             Phone Number
             <input value={form.phone} onChange={(e) => onChange("phone", e.target.value)} required
               style={{ 
@@ -382,16 +368,10 @@ export default function Page() {
           </label>
         
 
-        <label style={{ display: "flex", gap: 12, alignItems: "flex-start", color: "#ffffff", fontSize: "13px", marginTop: "8px", lineHeight: "1.5" }}>
+        <label style={{ display: "flex", gap: 12, alignItems: "flex-start", color: "#ffffff", fontSize: "13px", marginTop: "8px", lineHeight: "1.5", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
           <input type="checkbox" checked={form.optIn} onChange={(e) => onChange("optIn", e.target.checked)} 
             style={{ width: "18px", height: "18px", cursor: "pointer", marginTop: "2px", flexShrink: 0 }} />
           <span>Yes, it's okay to send me text messages including confirmations, changes, updates, and/or promotions. Message frequency varies. Message and data rates may apply. Reply STOP to cancel. View our terms of service & privacy policy.</span>
-        </label>
-
-        <label style={{ display: "flex", gap: 12, alignItems: "center", color: "#ffffff", fontSize: "14px", marginTop: "8px" }}>
-          <input type="checkbox" checked={form.consent} onChange={(e) => onChange("consent", e.target.checked)} required 
-            style={{ width: "18px", height: "18px", cursor: "pointer" }} />
-          I agree to the contest rules and privacy policy.
         </label>
 
         {error && <div style={{ background: "rgba(255, 255, 255, 0.9)", color: "#C8102E", padding: 16, borderRadius: 8, fontWeight: "600" }}>{error}</div>}
@@ -408,7 +388,8 @@ export default function Page() {
           border: "none",
           marginTop: "12px",
           transition: "all 0.3s ease",
-          opacity: loading ? 0.6 : 1
+          opacity: loading ? 0.6 : 1,
+          fontFamily: '"FWC26-NormalRegular", sans-serif'
         }}>
           {loading ? "Submitting..." : "Submit Entry"}
         </button>
@@ -418,7 +399,7 @@ export default function Page() {
 
         {/* FAQ Section */}
         <div style={{ maxWidth: "950px", width: "100%", marginTop: "80px", marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "clamp(28px, 5vw, 36px)", fontWeight: "700", marginBottom: "40px", textAlign: "center", color: "#ffffff" }}>Frequently Asked Questions</h2>
+          <h2 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(28px, 5vw, 36px)", fontWeight: "700", marginBottom: "40px", textAlign: "center", color: "#ffffff" }}>Frequently Asked Questions</h2>
           
           <div style={{ maxWidth: "900px", margin: "0 auto" }}>
             {/* FAQ 1 */}
@@ -436,16 +417,17 @@ export default function Page() {
                   justifyContent: "space-between",
                   alignItems: "center",
                   fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
                   fontWeight: "600",
                   color: "#ffffff"
                 }}
               >
-                What is this contest about?
+                How do I access my match tickets?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 1 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 1 && (
-                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6" }}>
-                  <p>This contest gives eligible cardholders the opportunity to win FIFA World Cup 26™ tickets or a VIP Experience package. Simply enter for your chance to experience the thrill of the world's biggest football event.</p>
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <p>The FIFA World Cup 2026™ is a mobile-only entry tournament. You will not receive paper tickets or emails with printable PDFs. To access your tickets, you must download two specific applications: the FIFA World Cup 2026™ App (for your FIFA ID) and the Visa Go App (to receive the tickets).</p>
                 </div>
               )}
             </div>
@@ -465,16 +447,17 @@ export default function Page() {
                   justifyContent: "space-between",
                   alignItems: "center",
                   fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
                   fontWeight: "600",
                   color: "#ffffff"
                 }}
               >
-                Is this contest available in other countries?
+                What is the deadline for claiming my tickets?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 2 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 2 && (
-                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6" }}>
-                  <p>This contest is available to eligible residents of Canada. Please review the complete terms and conditions for specific eligibility requirements.</p>
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <p>You must register on the Visa Go app at least 20 days prior to the match. If an account is not created by 12 days prior to the match, the tickets will be forfeited or reassigned.</p>
                 </div>
               )}
             </div>
@@ -494,16 +477,17 @@ export default function Page() {
                   justifyContent: "space-between",
                   alignItems: "center",
                   fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
                   fontWeight: "600",
                   color: "#ffffff"
                 }}
               >
-                How do I enter once I have an eligible card?
+                Are there specific requirements for setting up my accounts?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 3 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 3 && (
-                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6" }}>
-                  <p>Simply click the RSVP button above, fill out the entry form with your information, and submit. Once verified, you'll be entered into the draw for a chance to win.</p>
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <p>Yes. You must create your FIFA ID account using the exact same First Name, Last Name, and Email Address that you used to register for the Visa Go app. If these details do not match, you may not be able to access your tickets.</p>
                 </div>
               )}
             </div>
@@ -523,16 +507,137 @@ export default function Page() {
                   justifyContent: "space-between",
                   alignItems: "center",
                   fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
                   fontWeight: "600",
                   color: "#ffffff"
                 }}
               >
-                How old do I need to be to enter the contest?
+                Can I use a screenshot of my ticket to enter?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 4 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 4 && (
-                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6" }}>
-                  <p>Participants must be 18 years of age or older at the time of entry. Additional eligibility requirements may apply. Please refer to the official rules for complete details.</p>
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <p>No. Screenshots or photos of mobile tickets will not be accepted for stadium entry. You must present the active mobile ticket within the app.</p>
+                </div>
+              )}
+            </div>
+
+            {/* FAQ 5 */}
+            <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
+              <button
+                onClick={() => setOpenFaq(openFaq === 5 ? null : 5)}
+                style={{
+                  width: "100%",
+                  padding: "24px 0",
+                  textAlign: "left",
+                  backgroundColor: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
+                  fontWeight: "600",
+                  color: "#ffffff"
+                }}
+              >
+                Can I transfer my ticket to someone else?
+                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 5 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
+              </button>
+              {openFaq === 5 && (
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <p>No. Access is non-transferable. The tickets are intended specifically for the invited Moneris client or employee.</p>
+                </div>
+              )}
+            </div>
+
+            {/* FAQ 6 */}
+            <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
+              <button
+                onClick={() => setOpenFaq(openFaq === 6 ? null : 6)}
+                style={{
+                  width: "100%",
+                  padding: "24px 0",
+                  textAlign: "left",
+                  backgroundColor: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
+                  fontWeight: "600",
+                  color: "#ffffff"
+                }}
+              >
+                Can I leave the stadium and re-enter?
+                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 6 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
+              </button>
+              {openFaq === 6 && (
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <p>No. There is a strict no re-entry policy once you have scanned your ticket and entered the stadium.</p>
+                </div>
+              )}
+            </div>
+
+            {/* FAQ 7 */}
+            <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
+              <button
+                onClick={() => setOpenFaq(openFaq === 7 ? null : 7)}
+                style={{
+                  width: "100%",
+                  padding: "24px 0",
+                  textAlign: "left",
+                  backgroundColor: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
+                  fontWeight: "600",
+                  color: "#ffffff"
+                }}
+              >
+                What is the Code of Conduct?
+                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 7 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
+              </button>
+              {openFaq === 7 && (
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <p>All guests are expected to treat fans, staff, and players with respect. Abusive, discriminatory, or violent conduct is strictly prohibited and may result in removal.</p>
+                </div>
+              )}
+            </div>
+
+            {/* FAQ 8 */}
+            <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
+              <button
+                onClick={() => setOpenFaq(openFaq === 8 ? null : 8)}
+                style={{
+                  width: "100%",
+                  padding: "24px 0",
+                  textAlign: "left",
+                  backgroundColor: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
+                  fontWeight: "600",
+                  color: "#ffffff"
+                }}
+              >
+                When do I need to confirm my attendance?
+                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 8 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
+              </button>
+              {openFaq === 8 && (
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <p>Please submit your RSVP via this website immediately. Final guest RSVPs must be completed by May 7, 2026, to ensure you are registered in the system by the global deadline.</p>
                 </div>
               )}
             </div>

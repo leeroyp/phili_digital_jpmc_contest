@@ -1,0 +1,114 @@
+%!Adobe-FontList 1.25
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Volumes/Kat/01_FREELANCE_/Kat_/Behaviour/Projects_/Visa/Moneris/Working/FINALS/Moneris_Visa_Web_Canada Folder/Document fonts/AdobeFnt25.lst
+FileLength:2604
+FileModTime:791836748
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:FWC26-CondensedBlack
+FamilyName:FWC26
+StyleName:Condensed Black
+MenuName:FWC26 Condensed Black
+StyleBits:0
+WeightClass:900
+WidthClass:3
+AngleClass:0
+FullName:FWC26 Condensed Black
+WritingScript:Roman
+OutlineFileName:/Volumes/Kat/01_FREELANCE_/Kat_/Behaviour/Projects_/Visa/Moneris/Working/FINALS/Moneris_Visa_Web_Canada Folder/Document fonts/FWC26-CondensedBlack.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:109572
+FileModTime:789949560
+NameArray:0,Mac,4,FWC26 Condensed Black
+NameArray:0,Win,1,FWC26 Condensed Black
+NameArray:0,Win,16,FWC26
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:FWC26-NormalRegular
+FamilyName:FWC26
+StyleName:Normal Regular
+MenuName:FWC26 Normal
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:FWC26 Normal Regular
+WritingScript:Roman
+OutlineFileName:/Volumes/Kat/01_FREELANCE_/Kat_/Behaviour/Projects_/Visa/Moneris/Working/FINALS/Moneris_Visa_Web_Canada Folder/Document fonts/FWC26-NormalRegular.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:113012
+FileModTime:789949560
+NameArray:0,Mac,4,FWC26 Normal Regular
+NameArray:0,Win,1,FWC26 Normal
+NameArray:0,Win,16,FWC26
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:FWC26-NormalThin
+FamilyName:FWC26
+StyleName:Normal Thin
+MenuName:FWC26 Normal Thin
+StyleBits:0
+WeightClass:100
+WidthClass:5
+AngleClass:0
+FullName:FWC26 Normal Thin
+WritingScript:Roman
+OutlineFileName:/Volumes/Kat/01_FREELANCE_/Kat_/Behaviour/Projects_/Visa/Moneris/Working/FINALS/Moneris_Visa_Web_Canada Folder/Document fonts/FWC26-NormalThin.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:107676
+FileModTime:789949560
+NameArray:0,Mac,4,FWC26 Normal Thin
+NameArray:0,Win,1,FWC26 Normal Thin
+NameArray:0,Win,16,FWC26
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:NotoSans-Regular
+FamilyName:Noto Sans
+StyleName:Regular
+MenuName:Noto Sans
+FamilyPrefix:NotoSans
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Noto Sans Regular
+WritingScript:Roman
+OutlineFileName:/Volumes/Kat/01_FREELANCE_/Kat_/Behaviour/Projects_/Visa/Moneris/Working/FINALS/Moneris_Visa_Web_Canada Folder/Document fonts/NotoSans-VariableFont_wdth,wght.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:TrueTypeVariableFont
+FileLength:2044548
+FileModTime:779301864
+NameArray:0,Win,1,Noto Sans
+%EndFont
+
