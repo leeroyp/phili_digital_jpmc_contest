@@ -763,7 +763,17 @@ export default function Page() {
         <div style={{ maxWidth: "950px", width: "100%", marginTop: "60px", marginBottom: "60px" }}>
           <h2 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(28px, 5vw, 36px)", fontWeight: "700", marginBottom: "40px", textAlign: "center", color: "#ffffff" }}>FIFA Code of Conduct Summary</h2>
           
-          <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+          <div style={{ 
+            maxWidth: "900px", 
+            margin: "0 auto",
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
+            borderRadius: "16px",
+            padding: "32px",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
+            boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)"
+          }}>
             <p style={{ color: "#ffffff", fontSize: "clamp(14px, 2vw, 16px)", lineHeight: "1.6", marginBottom: "30px", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
               All guests are subject to agreeing to FIFA's ticketing terms, and the stadium code of conduct.
             </p>
