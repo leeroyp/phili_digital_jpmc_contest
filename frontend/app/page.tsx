@@ -73,6 +73,9 @@ export default function Page() {
       // Hide form and show thank you message
       setShowForm(false);
       setFormSubmitted(true);
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err: any) {
       setError(err?.message || "Something went wrong");
     } finally {
@@ -255,7 +258,7 @@ export default function Page() {
               grid-template-columns: 1fr 1fr !important;
             }
             .form-input {
-              width: 90% !important;
+              width: 48% !important;
             }
           }
           @media (max-width: 767px) {
@@ -365,22 +368,23 @@ export default function Page() {
           </label>
         </div>
 
-        <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
-          Phone Number
-          <input value={form.phone} onChange={(e) => onChange("phone", e.target.value)} required
-            className="form-input"
-            style={{ 
-              display: "block", 
-              width: "90%", 
-              padding: "12px 16px",
-              marginTop: "8px",
-              backgroundColor: "rgba(255, 255, 255, 0.9)",
-              border: "1px solid rgba(255, 255, 255, 0.3)",
-              borderRadius: 8,
-              fontSize: "16px",
-              color: "#333"
-            }} />
-        </label>
+        <div className="name-row" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
+            Phone Number
+            <input value={form.phone} onChange={(e) => onChange("phone", e.target.value)} required
+              style={{ 
+                display: "block", 
+                width: "90%", 
+                padding: "12px 16px",
+                marginTop: "8px",
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                borderRadius: 8,
+                fontSize: "16px",
+                color: "#333"
+              }} />
+          </label>
+        </div>
         
 
         <label style={{ display: "flex", gap: 12, alignItems: "flex-start", color: "#ffffff", fontSize: "13px", marginTop: "8px", lineHeight: "1.5", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
