@@ -12,6 +12,10 @@ type FormState = {
   companyName: string;
   email: string;
   phone: string;
+  streetAddress: string;
+  city: string;
+  province: string;
+  postalCode: string;
   optIn: boolean;
 };
 
@@ -34,6 +38,10 @@ export default function Page() {
     companyName: "",
     email: "",
     phone: "",
+    streetAddress: "",
+    city: "",
+    province: "",
+    postalCode: "",
     optIn: false,
   });
 
@@ -89,6 +97,10 @@ export default function Page() {
     if (!form.lastName.trim()) return "Last name is required";
     if (!form.email.trim()) return "Email is required";
     if (!form.phone.trim()) return "Phone is required";
+    if (!form.streetAddress.trim()) return "Street address is required";
+    if (!form.city.trim()) return "City is required";
+    if (!form.province.trim()) return "Province is required";
+    if (!form.postalCode.trim()) return "Postal code is required";
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -97,6 +109,10 @@ export default function Page() {
     // Phone validation - at least 10 digits
     const phoneDigits = form.phone.replace(/\D/g, "");
     if (phoneDigits.length < 10) return "Please enter a valid phone number (at least 10 digits)";
+
+    // Postal code validation (Canadian format)
+    const postalCodeRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
+    if (!postalCodeRegex.test(form.postalCode.trim())) return "Please enter a valid postal code (e.g., A1A 1A1)";
 
     // Name length validation
     if (form.firstName.length > 50) return "First name must be 50 characters or less";
@@ -164,20 +180,22 @@ export default function Page() {
           {!showForm && !formSubmitted && (
             <>
           {/* Hero Heading */}
-          <h1 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(36px, 8vw, 72px)", fontWeight: "900", lineHeight: "1.1", marginBottom: "clamp(16px, 3vw, 32px)", textTransform: "uppercase", letterSpacing: "clamp(1px, 0.3vw, 3px)", textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}>
-            You've got a front-row seat to history.
+          <h1 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "60px", fontWeight: "900", lineHeight: "1.05", marginBottom: "clamp(20px, 3vw, 32px)", textTransform: "uppercase", letterSpacing: "0", textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}>
+            YOU'VE GOT<br/> A FRONT ROW <br/>SEAT TO HISTORY
           </h1>
 
           {/* Description Text */}
-          <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "14px", lineHeight: "1.6", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px" }}>
+          <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "20px", lineHeight: "1.5", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(28px, 4vw, 40px)", maxWidth: "620px" }}>
             You're on the guest list for the ultimate FIFA World Cup 2026™ day in Toronto, thanks to Visa. Kick it in VIP lounges, take in the view from front-row seats, and unwrap a Match Day Kit made just for you.
-            <br/><br style={{ display: "block", content: '""', marginTop: "8px" }} />
-            <strong>Wednesday, June 17, 2026</strong>
-            <br/><br style={{ display: "block", content: '""', marginTop: "8px" }} />
+            <br style={{ display: "block", content: '""-row', marginTop: "12px" }} />
+            </p>
+            <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "14px", lineHeight: "1.5", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(28px, 4vw, 40px)", maxWidth: "620px" }}>
+            <span>Wednesday, June 17, 2026</span>
+            <br/>
             FIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)
-            <br/><br style={{ display: "block", content: '""', marginTop: "8px" }} />
+            <br/>
             Recommended arrival 1 hour to kick off
-            <br/><br style={{ display: "block", content: '""', marginTop: "8px" }} />
+            <br/><br style={{ display: "block", content: '""', marginTop: "4px" }} />
             Kickoff at 7pm ET
           </p>
 
@@ -207,7 +225,7 @@ export default function Page() {
 
             {/* Moneris Logo */}
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <img src="/moneris-logo.png" alt="Moneris" style={{ height: "clamp(32px, 4vw, 48px)", width: "auto" }} />
+              <img src="/moneris-logo.png" alt="Moneris" style={{ height: "clamp(24px, 3vw, 36px)", width: "auto" }} />
             </div>
           </div>
           </>
@@ -384,6 +402,74 @@ export default function Page() {
                 color: "#333"
               }} />
           </label>
+
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
+            Street Address
+            <input value={form.streetAddress} onChange={(e) => onChange("streetAddress", e.target.value)} required
+              style={{ 
+                display: "block", 
+                width: "90%", 
+                padding: "12px 16px",
+                marginTop: "8px",
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                borderRadius: 8,
+                fontSize: "16px",
+                color: "#333"
+              }} />
+          </label>
+        </div>
+
+        <div className="name-row" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
+            City
+            <input value={form.city} onChange={(e) => onChange("city", e.target.value)} required
+              style={{ 
+                display: "block", 
+                width: "90%", 
+                padding: "12px 16px",
+                marginTop: "8px",
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                borderRadius: 8,
+                fontSize: "16px",
+                color: "#333"
+              }} />
+          </label>
+
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
+            Province
+            <input value={form.province} onChange={(e) => onChange("province", e.target.value)} required
+              style={{ 
+                display: "block", 
+                width: "90%", 
+                padding: "12px 16px",
+                marginTop: "8px",
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                borderRadius: 8,
+                fontSize: "16px",
+                color: "#333"
+              }} />
+          </label>
+        </div>
+
+        <div className="name-row" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
+            Postal Code
+            <input value={form.postalCode} onChange={(e) => onChange("postalCode", e.target.value)} required
+              style={{ 
+                display: "block", 
+                width: "90%", 
+                padding: "12px 16px",
+                marginTop: "8px",
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                borderRadius: 8,
+                fontSize: "16px",
+                color: "#333"
+              }} />
+          </label>
         </div>
         
 
@@ -418,9 +504,19 @@ export default function Page() {
 
         {/* FAQ Section */}
         <div style={{ maxWidth: "950px", width: "100%", marginTop: "80px", marginBottom: "60px" }}>
-          <h2 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(28px, 5vw, 36px)", fontWeight: "700", marginBottom: "40px", textAlign: "center", color: "#ffffff" }}>Ticketing & Digital Access</h2>
+          <h2 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(28px, 5vw, 36px)", fontWeight: "700", marginBottom: "40px", textAlign: "center", color: "#ffffff" }}>Frequently Asked Questions</h2>
           
-          <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+          <div style={{ 
+            maxWidth: "900px", 
+            margin: "0 auto",
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
+            borderRadius: "16px",
+            padding: "32px",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
+            boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)"
+          }}>
             {/* FAQ 1 */}
             <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
               <button
@@ -665,7 +761,7 @@ export default function Page() {
 
         {/* Code of Conduct Summary Section */}
         <div style={{ maxWidth: "950px", width: "100%", marginTop: "60px", marginBottom: "60px" }}>
-          <h2 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(28px, 5vw, 36px)", fontWeight: "700", marginBottom: "40px", textAlign: "center", color: "#ffffff" }}>Code of Conduct Summary</h2>
+          <h2 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(28px, 5vw, 36px)", fontWeight: "700", marginBottom: "40px", textAlign: "center", color: "#ffffff" }}>FIFA Code of Conduct Summary</h2>
           
           <div style={{ maxWidth: "900px", margin: "0 auto" }}>
             <p style={{ color: "#ffffff", fontSize: "clamp(14px, 2vw, 16px)", lineHeight: "1.6", marginBottom: "30px", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
