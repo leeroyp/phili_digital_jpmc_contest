@@ -136,7 +136,7 @@ export default function Page() {
       <main
         style={{
           minHeight: "calc(100vh - 64px)",
-          backgroundImage: "url(/HeroBgImage.png)",
+          backgroundImage: "url(/hero-bg-2.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
