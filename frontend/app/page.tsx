@@ -206,7 +206,7 @@ export default function Page() {
                 setShowForm(true);
               }}
               style={{ 
-                backgroundColor: "#E84E1B", 
+                backgroundColor: "#D50101", 
                 color: "#ffffff", 
                 border: "none", 
                 padding: "clamp(12px, 2vw, 16px) clamp(32px, 6vw, 64px)", 
@@ -486,7 +486,7 @@ export default function Page() {
           width: "90%", 
           borderRadius: 8,
           cursor: loading ? "not-allowed" : "pointer",
-          backgroundColor: "#E84E1B",
+          backgroundColor: "#D50101",
           color: "#ffffff",
           fontSize: "18px",
           fontWeight: "700",
