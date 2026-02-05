@@ -160,14 +160,22 @@ export default function Page() {
 
           {!showForm && !formSubmitted && (
             <>
-          {/* RSVP TODAY Heading */}
+          {/* Hero Heading */}
           <h1 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(36px, 8vw, 72px)", fontWeight: "900", lineHeight: "1.1", marginBottom: "clamp(16px, 3vw, 32px)", textTransform: "uppercase", letterSpacing: "clamp(1px, 0.3vw, 3px)", textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}>
-            RSVP TODAY
+            You've got a front-row seat to history.
           </h1>
 
           {/* Description Text */}
           <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "clamp(14px, 2.5vw, 22px)", lineHeight: "clamp(20px, 3.5vw, 32px)", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px" }}>
-            Ut dollabo repraep ellatempore velignis doleni tecata volecaborro moNum quatum dollab im aut et molorrum delessim velique consequaest, core
+            You're on the guest list for the ultimate FIFA World Cup 2026™ day in Toronto, thanks to Visa. Kick it in VIP lounges, take in the view from front-row seats, and unwrap a Match Day Kit made just for you.
+            <br/><br/>
+            <strong>Wednesday, June 17, 2026</strong>
+            <br/><br/>
+            FIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)
+            <br/><br/>
+            Recommended arrival 1 hour to kick off
+            <br/><br/>
+            Kickoff at 7pm ET
           </p>
 
           {/* RSVP Button and Moneris Logo */}
@@ -231,25 +239,33 @@ export default function Page() {
             marginLeft: "clamp(0px, -10vw, -150px)",
             border: "1px solid rgba(255, 255, 255, 0.2)",
           }}>
-            <h1 style={{ 
+            <h2 style={{ 
               fontFamily: '"FWC26-CondensedBlack", sans-serif',
               fontSize: "clamp(28px, 4vw, 36px)", 
               fontWeight: "700", 
               marginBottom: "32px", 
               color: "#ffffff",
               textAlign: "center"
-            }}>Registration</h1>
+            }}>RSVP for you and your guest by May 7, 2026.</h2>
 
             <form onSubmit={onSubmit} style={{ display: "grid", gap: 20 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
-          <style jsx>{`
-            @media (min-width: 768px) {
-              .name-row {
-                grid-template-columns: 1fr 1fr !important;
-              }
+        <style jsx>{`
+          @media (min-width: 768px) {
+            .name-row {
+              grid-template-columns: 1fr 1fr !important;
             }
-          `}</style>
-          <div className="name-row" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
+            .form-input {
+              width: 90% !important;
+            }
+          }
+          @media (max-width: 767px) {
+            .form-input {
+              width: 90% !important;
+            }
+          }
+        `}</style>
+        
+        <div className="name-row" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
           <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
             First Name
             <input value={form.firstName} onChange={(e) => onChange("firstName", e.target.value)} required
@@ -280,7 +296,6 @@ export default function Page() {
                 color: "#333"
               }} />
           </label>
-          </div>
         </div>
 
         <div className="name-row" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
@@ -317,23 +332,22 @@ export default function Page() {
         </div>
 
         <div className="name-row" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
-        <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
-          Company Name
-          <input value={form.companyName} onChange={(e) => onChange("companyName", e.target.value)}
-            style={{ 
-              display: "block", 
-              width: "90%", 
-              padding: "12px 16px",
-              marginTop: "8px",
-              backgroundColor: "rgba(255, 255, 255, 0.9)",
-              border: "1px solid rgba(255, 255, 255, 0.3)",
-              borderRadius: 8,
-              fontSize: "16px",
-              color: "#333"
-            }} />
-        </label>
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
+            Company Name
+            <input value={form.companyName} onChange={(e) => onChange("companyName", e.target.value)}
+              style={{ 
+                display: "block", 
+                width: "90%", 
+                padding: "12px 16px",
+                marginTop: "8px",
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                borderRadius: 8,
+                fontSize: "16px",
+                color: "#333"
+              }} />
+          </label>
 
-        
           <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
             Email Address
             <input type="email" value={form.email} onChange={(e) => onChange("email", e.target.value)} required
@@ -349,23 +363,24 @@ export default function Page() {
                 color: "#333"
               }} />
           </label>
-          </div>
+        </div>
 
-          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
-            Phone Number
-            <input value={form.phone} onChange={(e) => onChange("phone", e.target.value)} required
-              style={{ 
-                display: "block", 
-                width: "44%", 
-                padding: "12px 16px",
-                marginTop: "8px",
-                backgroundColor: "rgba(255, 255, 255, 0.9)",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
-                borderRadius: 8,
-                fontSize: "16px",
-                color: "#333"
-              }} />
-          </label>
+        <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
+          Phone Number
+          <input value={form.phone} onChange={(e) => onChange("phone", e.target.value)} required
+            className="form-input"
+            style={{ 
+              display: "block", 
+              width: "90%", 
+              padding: "12px 16px",
+              marginTop: "8px",
+              backgroundColor: "rgba(255, 255, 255, 0.9)",
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              borderRadius: 8,
+              fontSize: "16px",
+              color: "#333"
+            }} />
+        </label>
         
 
         <label style={{ display: "flex", gap: 12, alignItems: "flex-start", color: "#ffffff", fontSize: "13px", marginTop: "8px", lineHeight: "1.5", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
@@ -376,9 +391,9 @@ export default function Page() {
 
         {error && <div style={{ background: "rgba(255, 255, 255, 0.9)", color: "#C8102E", padding: 16, borderRadius: 8, fontWeight: "600" }}>{error}</div>}
 
-        <button type="submit" disabled={loading} style={{ 
+        <button type="submit" disabled={loading} className="form-input" style={{ 
           padding: "16px 32px",
-          width: "48%", 
+          width: "90%", 
           borderRadius: 8,
           cursor: loading ? "not-allowed" : "pointer",
           backgroundColor: "#E84E1B",
@@ -391,7 +406,7 @@ export default function Page() {
           opacity: loading ? 0.6 : 1,
           fontFamily: '"FWC26-NormalRegular", sans-serif'
         }}>
-          {loading ? "Submitting..." : "Submit Entry"}
+          {loading ? "Submitting..." : "Register"}
         </button>
       </form>
       </div>
@@ -399,7 +414,7 @@ export default function Page() {
 
         {/* FAQ Section */}
         <div style={{ maxWidth: "950px", width: "100%", marginTop: "80px", marginBottom: "60px" }}>
-          <h2 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(28px, 5vw, 36px)", fontWeight: "700", marginBottom: "40px", textAlign: "center", color: "#ffffff" }}>Frequently Asked Questions</h2>
+          <h2 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(28px, 5vw, 36px)", fontWeight: "700", marginBottom: "40px", textAlign: "center", color: "#ffffff" }}>Ticketing & Digital Access</h2>
           
           <div style={{ maxWidth: "900px", margin: "0 auto" }}>
             {/* FAQ 1 */}
@@ -640,6 +655,56 @@ export default function Page() {
                   <p>Please submit your RSVP via this website immediately. Final guest RSVPs must be completed by May 7, 2026, to ensure you are registered in the system by the global deadline.</p>
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+
+        {/* Code of Conduct Summary Section */}
+        <div style={{ maxWidth: "950px", width: "100%", marginTop: "60px", marginBottom: "60px" }}>
+          <h2 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(28px, 5vw, 36px)", fontWeight: "700", marginBottom: "40px", textAlign: "center", color: "#ffffff" }}>Code of Conduct Summary</h2>
+          
+          <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+            <p style={{ color: "#ffffff", fontSize: "clamp(14px, 2vw, 16px)", lineHeight: "1.6", marginBottom: "30px", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+              All guests are subject to agreeing to FIFA's ticketing terms, and the stadium code of conduct.
+            </p>
+
+            {/* Respect & Behaviour */}
+            <div style={{ marginBottom: "30px" }}>
+              <h3 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: "700", marginBottom: "12px", color: "#ffffff" }}>Respect & Behaviour</h3>
+              <ul style={{ color: "#ffffff", fontSize: "clamp(14px, 2vw, 16px)", lineHeight: "1.8", paddingLeft: "20px", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                <li>Treat all fans, staff and players with respect</li>
+                <li>No abusive, discriminatory, or violent conduct</li>
+              </ul>
+            </div>
+
+            {/* Entry & Security */}
+            <div style={{ marginBottom: "30px" }}>
+              <h3 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: "700", marginBottom: "12px", color: "#ffffff" }}>Entry & Security</h3>
+              <ul style={{ color: "#ffffff", fontSize: "clamp(14px, 2vw, 16px)", lineHeight: "1.8", paddingLeft: "20px", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                <li>Mandatory security checks at gates</li>
+                <li>Bags subject to inspection, clear bags required; size restrictions apply</li>
+                <li>No re-entry once you leave the stadium</li>
+              </ul>
+            </div>
+
+            {/* Prohibited Items */}
+            <div style={{ marginBottom: "30px" }}>
+              <h3 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: "700", marginBottom: "12px", color: "#ffffff" }}>Prohibited Items</h3>
+              <ul style={{ color: "#ffffff", fontSize: "clamp(14px, 2vw, 16px)", lineHeight: "1.8", paddingLeft: "20px", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                <li>Weapons, fireworks, flares and hazardous materials</li>
+                <li>Large banners, political or offensive signs, and umbrellas (per FIFA match rules)</li>
+                <li>Alcohol beyond designed areas; illegal substances strictly banned</li>
+              </ul>
+            </div>
+
+            {/* Fan Responsibilities */}
+            <div style={{ marginBottom: "30px" }}>
+              <h3 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: "700", marginBottom: "12px", color: "#ffffff" }}>Fan Responsibilities</h3>
+              <ul style={{ color: "#ffffff", fontSize: "clamp(14px, 2vw, 16px)", lineHeight: "1.8", paddingLeft: "20px", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                <li>Follow seating assignments and steward instructions</li>
+                <li>Smoking only in designated areas; respect alcohol free areas</li>
+                <li>Maintain clear aisles and emergency exits</li>
+              </ul>
             </div>
           </div>
         </div>
