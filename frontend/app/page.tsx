@@ -166,15 +166,15 @@ export default function Page() {
           </h1>
 
           {/* Description Text */}
-          <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "clamp(14px, 2.5vw, 22px)", lineHeight: "clamp(20px, 3.5vw, 32px)", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px" }}>
+          <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "14px", lineHeight: "1.6", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px" }}>
             You're on the guest list for the ultimate FIFA World Cup 2026™ day in Toronto, thanks to Visa. Kick it in VIP lounges, take in the view from front-row seats, and unwrap a Match Day Kit made just for you.
-            <br/><br/>
+            <br/><br style={{ display: "block", content: '""', marginTop: "8px" }} />
             <strong>Wednesday, June 17, 2026</strong>
-            <br/><br/>
+            <br/><br style={{ display: "block", content: '""', marginTop: "8px" }} />
             FIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)
-            <br/><br/>
+            <br/><br style={{ display: "block", content: '""', marginTop: "8px" }} />
             Recommended arrival 1 hour to kick off
-            <br/><br/>
+            <br/><br style={{ display: "block", content: '""', marginTop: "8px" }} />
             Kickoff at 7pm ET
           </p>
 
