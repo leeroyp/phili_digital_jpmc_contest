@@ -126,7 +126,7 @@ export const handler = async (event: any) => {
           <!-- Hero Section with Image -->
           <tr>
             <td style="padding: 0;">
-              <img src="${LANDING_PAGE_URL}/Moneris_Visa_Email_ThankYou.png" alt="You're Registered" style="width: 100%; height: auto; display: block;" />
+              <img src="${LANDING_PAGE_URL}/jpmc-invite-email-hero.png" alt="You're Registered" style="width: 100%; height: auto; display: block;" />
             </td>
           </tr>
 
@@ -158,9 +158,9 @@ export const handler = async (event: any) => {
                 The wait is on; you will receive your FIFA tickets at least 20 days prior to the match.
               </p>
               
-              <!-- Moneris Logo -->
+              <!-- JPMC Logo -->
               <div style="text-align: center; margin: 20px 0 0 0; padding: 10px 0;">
-                <img src="${LANDING_PAGE_URL}/moneris-logo-email.png" alt="Moneris" style="height: 48px; width: auto; display: inline-block;" />
+                <img src="${LANDING_PAGE_URL}/JPMC_Logo_Standard_Black_RGB.png" alt="J.P. Morgan" style="height: 48px; width: auto; display: inline-block;" />
               </div>
 
             </td>

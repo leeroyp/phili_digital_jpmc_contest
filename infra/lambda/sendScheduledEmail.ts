@@ -51,7 +51,7 @@ export const handler = async (event: Payload) => {
           <!-- Hero Section with Image -->
           <tr>
             <td style="padding: 0;">
-              <img src="${LANDING_PAGE_URL}/Moneris_Visa_Email_Countdown.png" alt="Countdown" style="width: 100%; height: auto; display: block;" />
+              <img src="${LANDING_PAGE_URL}/jpmc-invite-email-hero.png" alt="Countdown" style="width: 100%; height: auto; display: block;" />
             </td>
           </tr>
 
@@ -89,9 +89,9 @@ export const handler = async (event: Payload) => {
                 Kick off at 7pm ET
               </p>
               
-              <!-- Moneris Logo -->
+              <!-- JPMC Logo -->
               <div style="text-align: center; margin: 20px 0 0 0; padding: 10px 0;">
-                <img src="${LANDING_PAGE_URL}/moneris-logo-email.png" alt="Moneris" style="height: 48px; width: auto; display: inline-block;" />
+                <img src="${LANDING_PAGE_URL}/JPMC_Logo_Standard_Black_RGB.png" alt="J.P. Morgan" style="height: 48px; width: auto; display: inline-block;" />
               </div>
 
             </td>

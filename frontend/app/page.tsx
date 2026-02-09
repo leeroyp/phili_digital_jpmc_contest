@@ -16,6 +16,7 @@ type FormState = {
   city: string;
   province: string;
   postalCode: string;
+  jerseySize: string;
   optIn: boolean;
 };
 
@@ -42,6 +43,7 @@ export default function Page() {
     city: "",
     province: "",
     postalCode: "",
+    jerseySize: "",
     optIn: false,
   });
 
@@ -136,7 +138,7 @@ export default function Page() {
       <main
         style={{
           minHeight: "calc(100vh - 64px)",
-          backgroundImage: "url(/hero-bg-2.png)",
+          backgroundImage: "url(/jpmc-GoldGradient-bg.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -150,102 +152,170 @@ export default function Page() {
         }}
       >
         {/* Hero Content Section */}
-        <div style={{ 
-          maxWidth: 950, 
-          width: "100%", 
-          color: "#ffffff", 
-          marginLeft: "clamp(0px, -10vw, -150px)",
-        }}>
-          <style jsx>{`
-            @media (max-width: 475px) {
-              .hero-content > * {
-                text-align: center !important;
+        {!showForm && !formSubmitted && (
+          <div className="hero-card-wrapper" style={{ 
+            maxWidth: "1200px", 
+            width: "100%", 
+            display: "flex",
+            borderRadius: "24px",
+            overflow: "hidden",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
+            minHeight: "400px",
+            flexDirection: "row",
+          }}>
+            <style jsx>{`
+              @media (max-width: 1023px) {
+                .hero-card-wrapper {
+                  flex-direction: column !important;
+                }
+                .hero-divider {
+                  width: 100% !important;
+                  height: 18px !important;
+                  background: linear-gradient(180deg, #7a5e2a 0%, #b8923d 12%, #d4aa4f 25%, #e8c45e 40%, #f2d76b 50%, #e8c45e 60%, #d4aa4f 75%, #b8923d 88%, #7a5e2a 100%) !important;
+                }
               }
-              .hero-content .flex-container {
-                justify-content: center !important;
-              }
-            }
-            @media (min-width: 476px) {
-              .hero-content .flex-container {
-                justify-content: flex-start !important;
-              }
-            }
-          `}</style>
-          <div className="hero-content">
-          {/* VISA | FIFA Logo */}
-          <div className="flex-container" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "8px", marginBottom: "clamp(24px, 4vw, 48px)" }}>
-            <img src="/visa-logo-hero.png" alt="VISA | FIFA" style={{ height: "clamp(56px, 10vw, 100px)", width: "auto" }} />
-          </div>
+            `}</style>
+            
+            {/* Left Section - Dark with VISA Logo */}
+            <div className="hero-left" style={{
+              flex: "1",
+              backgroundColor: "#1a1a1a",
+              backgroundImage: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)",
+              padding: "clamp(40px, 6vw, 80px) clamp(20px, 3vw, 40px)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "24px",
+            }}>
+              <img src="/visa-logo-hero.png" alt="VISA | FIFA" style={{ 
+                height: "clamp(80px, 12vw, 120px)", 
+                width: "auto",
+                filter: "brightness(1.1)"
+              }} />
+            </div>
 
-          {!showForm && !formSubmitted && (
-            <>
-          {/* Hero Heading */}
-          <h1 style={{ fontFamily: '"FWC26-CondensedBlack", sans-serif', fontSize: "60px", fontWeight: "900", lineHeight: "1.05", marginBottom: "clamp(20px, 3vw, 32px)", textTransform: "uppercase", letterSpacing: "0", textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}>
-            YOU'VE GOT<br/> A FRONT ROW <br/>SEAT TO HISTORY
-          </h1>
+            {/* Gold Divider */}
+            <div className="hero-divider" style={{
+              width: "18px",
+              position: "relative",
+              flexShrink: 0,
+              background: "linear-gradient(90deg, #7a5e2a 0%, #b8923d 12%, #d4aa4f 25%, #e8c45e 40%, #f2d76b 50%, #e8c45e 60%, #d4aa4f 75%, #b8923d 88%, #7a5e2a 100%)",
+              boxShadow: "inset 1px 0 2px rgba(255,235,170,0.3), inset -1px 0 2px rgba(80,55,15,0.3)",
+            }}></div>
 
-          {/* Description Text */}
-          <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "20px", lineHeight: "1.5", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(28px, 4vw, 40px)", maxWidth: "620px" }}>
-            You're on the guest list for the ultimate FIFA World Cup 2026™ day in Toronto, thanks to Visa. Kick it in VIP lounges, take in the view from front-row seats, and unwrap a Match Day Kit made just for you.
-            <br style={{ display: "block", content: '""-row', marginTop: "12px" }} />
-            </p>
-            <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "14px", lineHeight: "1.5", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(28px, 4vw, 40px)", maxWidth: "620px" }}>
-            <span>Wednesday, June 17, 2026</span>
+            {/* Right Section - Light with RSVP */}
+            <div className="hero-right" style={{
+              flex: "1",
+              backgroundColor: "#ffffff",
+              padding: "clamp(40px, 6vw, 80px) clamp(20px, 3vw, 40px)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "clamp(20px, 3vw, 32px)",
+            }}>
+              <h1 style={{
+                fontFamily: '"FWC26-CondensedBlack", sans-serif',
+                fontSize: "clamp(36px, 6vw, 56px)",
+                fontWeight: "900",
+                lineHeight: "1.1",
+                color: "#000000",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                margin: "0",
+                textAlign: "center",
+              }}>
+                A front row seat to history
+              </h1>
+              
+              <p style={{
+                fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif',
+                fontSize: "clamp(14px, 2vw, 18px)",
+                lineHeight: "1.6",
+                color: "#333333",
+                margin: "0",
+                maxWidth: "100%",
+                textAlign: "center",
+              }}>
+                Step into an experience few will ever witness. As an exclusive guest, you’ll cheer Team Canada from front-row seats in Toronto and enjoy a bespoke Match Day Kit made for your day at the stadium. Be part of history at football’s biggest stage.
+              </p>
+              <p style={{
+                fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif',
+                fontSize: "14px",
+                lineHeight: "1.5",
+                color: "#333333",
+                margin: "0",
+                maxWidth: "100%",
+                letterSpacing: "0",
+                fontWeight: "300",
+                textAlign: "center",
+              }}>
+                <span>Friday, June 12, 2026</span>
             <br/>
             FIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)
             <br/>
             Recommended arrival 1 hour to kick off
             <br/><br style={{ display: "block", content: '""', marginTop: "4px" }} />
-            Kickoff at 7pm ET
-          </p>
+            Kickoff at 3pm ET
+              </p>
+              
+              
 
-          {/* RSVP Button and Moneris Logo */}
-          <div className="flex-container" style={{ display: "flex", alignItems: "center", gap: "clamp(20px, 8vw, 80px)", flexWrap: "wrap" }}>
-            <button 
-              onClick={() => {
-                setShowForm(true);
-              }}
-              style={{ 
-                backgroundColor: "#D50101", 
-                color: "#ffffff", 
-                border: "none", 
-                padding: "clamp(12px, 2vw, 16px) clamp(32px, 6vw, 64px)", 
-                fontSize: "clamp(14px, 2vw, 18px)", 
-                fontWeight: "700", 
-                borderRadius: "8px", 
-                cursor: "pointer",
-                textTransform: "uppercase",
-                letterSpacing: "clamp(1px, 0.2vw, 2px)",
-                boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
-                fontFamily: '"FWC26-NormalRegular", sans-serif'
-              }}
-            >
-              RSVP
-            </button>
-
-            {/* Moneris Logo */}
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <img src="/moneris-logo.png" alt="Moneris" style={{ height: "clamp(24px, 3vw, 36px)", width: "auto" }} />
+              <button 
+                onClick={() => {
+                  setShowForm(true);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                style={{ 
+                  backgroundColor: "#8B6F47", 
+                  color: "#ffffff", 
+                  border: "none", 
+                  padding: "clamp(14px, 2vw, 18px) clamp(40px, 6vw, 70px)", 
+                  fontSize: "clamp(14px, 2vw, 18px)", 
+                  fontWeight: "700", 
+                  borderRadius: "50px", 
+                  cursor: "pointer",
+                  textTransform: "uppercase",
+                  letterSpacing: "1.5px",
+                  boxShadow: "0 6px 20px rgba(139, 111, 71, 0.4)",
+                  fontFamily: '"FWC26-NormalRegular", sans-serif',
+                  transition: "all 0.3s ease",
+                }}
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#72573a"}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#8B6F47"}
+              >
+                RSVP
+              </button>
             </div>
           </div>
-          </>
-          )}
+        )}
 
-          {formSubmitted && (
-            <>
-          {/* Thank You Message */}
-          <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "clamp(14px, 2.5vw, 22px)", lineHeight: "clamp(20px, 3.5vw, 32px)", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px" }}>
-            Thank you for registering for the FIFA World Cup 2026™ thanks to Visa. You will receive an email momentarily with more information on how to access your tickets.
-          </p>
+        {formSubmitted && (
+          <div style={{ 
+            maxWidth: 950, 
+            width: "100%", 
+            color: "#ffffff", 
+            marginLeft: "clamp(0px, -10vw, -150px)",
+          }}>
+            <div className="hero-content">
+              {/* VISA | FIFA Logo */}
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "8px", marginBottom: "clamp(24px, 4vw, 48px)" }}>
+                <img src="/visa-logo-hero.png" alt="VISA | FIFA" style={{ height: "clamp(56px, 10vw, 100px)", width: "auto" }} />
+              </div>
 
-          {/* Moneris Logo Only */}
-          <div className="flex-container" style={{ display: "flex", alignItems: "center" }}>
-            <img src="/moneris-logo.png" alt="Moneris" style={{ height: "clamp(32px, 4vw, 48px)", width: "auto" }} />
+              {/* Thank You Message */}
+              <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "clamp(14px, 2.5vw, 22px)", lineHeight: "clamp(20px, 3.5vw, 32px)", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px" }}>
+                Thank you for registering for the FIFA World Cup 2026™ thanks to Visa. You will receive an email momentarily with more information on how to access your tickets.
+              </p>
+
+              {/* Moneris Logo Only */}
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <img src="/moneris-logo.png" alt="Moneris" style={{ height: "clamp(32px, 4vw, 48px)", width: "auto" }} />
+              </div>
+            </div>
           </div>
-          </>
-          )}
-          </div>
-        </div>
+        )}
 
         {/* Contest Form */}
         {showForm && (
@@ -470,6 +540,31 @@ export default function Page() {
                 color: "#333"
               }} />
           </label>
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
+            Jersey Size
+            <select value={form.jerseySize} onChange={(e) => onChange("jerseySize", e.target.value)} required
+              style={{ 
+                display: "block", 
+                width: "96%", 
+                padding: "12px 16px",
+                marginTop: "8px",
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                borderRadius: 8,
+                fontSize: "16px",
+                color: "#333",
+                cursor: "pointer"
+              }}>
+              <option value="">Select size</option>
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="2XL">2XL</option>
+              <option value="3XL">3XL</option>
+            </select>
+          </label>
         </div>
         
 
@@ -482,20 +577,26 @@ export default function Page() {
         {error && <div style={{ background: "rgba(255, 255, 255, 0.9)", color: "#C8102E", padding: 16, borderRadius: 8, fontWeight: "600" }}>{error}</div>}
 
         <button type="submit" disabled={loading} className="form-input" style={{ 
-          padding: "16px 32px",
+          padding: "clamp(14px, 2vw, 18px) clamp(40px, 6vw, 70px)",
           width: "90%", 
-          borderRadius: 8,
+          borderRadius: "50px",
           cursor: loading ? "not-allowed" : "pointer",
-          backgroundColor: "#D50101",
+          backgroundColor: "#8B6F47",
           color: "#ffffff",
-          fontSize: "18px",
+          fontSize: "clamp(14px, 2vw, 18px)",
           fontWeight: "700",
           border: "none",
           marginTop: "12px",
           transition: "all 0.3s ease",
           opacity: loading ? 0.6 : 1,
-          fontFamily: '"FWC26-NormalRegular", sans-serif'
-        }}>
+          fontFamily: '"FWC26-NormalRegular", sans-serif',
+          textTransform: "uppercase" as const,
+          letterSpacing: "1.5px",
+          boxShadow: "0 6px 20px rgba(139, 111, 71, 0.4)",
+        }}
+          onMouseOver={(e) => { if (!loading) e.currentTarget.style.backgroundColor = "#72573a"; }}
+          onMouseOut={(e) => { if (!loading) e.currentTarget.style.backgroundColor = "#8B6F47"; }}
+        >
           {loading ? "Submitting..." : "Register"}
         </button>
       </form>
@@ -537,12 +638,20 @@ export default function Page() {
                   color: "#ffffff"
                 }}
               >
-                How do I access my match tickets?
+                How will I receive my match tickets, and which apps do I need?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 1 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 1 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>The FIFA World Cup 2026™ is a mobile-only entry tournament. You will not receive paper tickets or emails with printable PDFs. To access your tickets, you must download two specific applications: the FIFA World Cup 2026™ App (for your FIFA ID) and the Visa Go App (to receive the tickets).</p>
+                  <p>Your FIFA World Cup 2026™ tickets will be delivered digitally and managed through the Visa Go App and the FIFA World Cup 2026™ App.</p>
+                  <p style={{ marginTop: "12px" }}>You will receive two emails (an initial email and a reminder) to download the Visa Go App and create an account. Please ensure you download the Visa Go app at least 15 days before the match. Creating your Visa Go account validates your email, which allows FIFA to process and assign your tickets.</p>
+                  <p style={{ marginTop: "12px" }}>All attendees must also download and register with the FIFA World Cup 2026™ App. It's important that you use the same email for both Visa Go and FIFA.</p>
+                  <p style={{ marginTop: "12px" }}>Your mobile tickets will be released in the FIFA app at least 3 days before the match. When they are available, you will receive:</p>
+                  <ul style={{ paddingLeft: "20px", marginTop: "8px" }}>
+                    <li>A notification from Visa Go, and</li>
+                    <li>An email directly from FIFA.</li>
+                  </ul>
+                  <p style={{ marginTop: "12px" }}>Visa Go will guide you through linking to the FIFA app and accessing your tickets once they are released.</p>
                 </div>
               )}
             </div>
@@ -567,12 +676,12 @@ export default function Page() {
                   color: "#ffffff"
                 }}
               >
-                What is the deadline for claiming my tickets?
+                Are printed tickets or screenshots accepted?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 2 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 2 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>You must register on the Visa Go app at least 20 days prior to the match. If an account is not created by 12 days prior to the match, the tickets will be forfeited or reassigned.</p>
+                  <p>No. Screenshots or photos of tickets will not be accepted for stadium entry. Mobile‑only entry applies.</p>
                 </div>
               )}
             </div>
@@ -597,12 +706,12 @@ export default function Page() {
                   color: "#ffffff"
                 }}
               >
-                Are there specific requirements for setting up my accounts?
+                Where is the stadium located?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 3 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 3 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>Yes. You must create your FIFA ID account using the exact same First Name, Last Name, and Email Address that you used to register for the Visa Go app. If these details do not match, you may not be able to access your tickets.</p>
+                  <p><strong>Toronto:</strong><br/>Toronto Stadium is located at Exhibition Place, just west of downtown Toronto along the waterfront.<br/>Address: 170 Princes' Blvd, Toronto, ON</p>
                 </div>
               )}
             </div>
@@ -627,12 +736,36 @@ export default function Page() {
                   color: "#ffffff"
                 }}
               >
-                Can I use a screenshot of my ticket to enter?
+                What's the best way to get to the Toronto Stadium?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 4 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 4 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>No. Screenshots or photos of mobile tickets will not be accepted for stadium entry. You must present the active mobile ticket within the app.</p>
+                  <p>Major events bring heavy traffic, road closures, and security perimeters. If you're planning to drive or use ride share/taxis, please leave extra time, expect delays, and arrive with patience — planning ahead is key to a smooth experience.</p>
+                  
+                  <p style={{ marginTop: "16px" }}><strong>Toronto Stadium</strong></p>
+                  <p style={{ marginTop: "8px" }}><strong>Ride Share / Taxi</strong></p>
+                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
+                    <li>Available, but drop‑off zones are limited due to road closures</li>
+                    <li>Expect delays before and after matches</li>
+                  </ul>
+                  <p style={{ marginTop: "8px" }}><strong>Driving</strong></p>
+                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
+                    <li>Parking is limited</li>
+                    <li>Heavy event‑day traffic is expected</li>
+                    <li>Leave early and allow extra time</li>
+                  </ul>
+                  <p style={{ marginTop: "8px" }}><strong>Public Transit (alternative)</strong></p>
+                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
+                    <li>Accessible via GO Train (Exhibition Station) or TTC streetcars</li>
+                  </ul>
+
+                  <p style={{ marginTop: "16px" }}><strong>Plan ahead</strong></p>
+                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
+                    <li>Leave earlier than usual</li>
+                    <li>Expect traffic, walking time, and security screening</li>
+                    <li>Build in extra time so you can arrive relaxed and ready to enjoy the match</li>
+                  </ul>
                 </div>
               )}
             </div>
@@ -657,12 +790,14 @@ export default function Page() {
                   color: "#ffffff"
                 }}
               >
-                Can I transfer my ticket to someone else?
+                Is parking available at the stadium?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 5 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 5 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>No. Access is non-transferable. The tickets are intended specifically for the invited Moneris client or employee.</p>
+                  <p>Yes, general parking pass sales for FIFA World Cup 2026™ will be available closer to the time of the match. For specific information, visit the official FIFA World Cup 2026™ parking website to stay up to date on when parking is available.</p>
+                  <p style={{ marginTop: "8px" }}><a href="https://www.justpark.com/us/event-parking/fifa-world-cup-2026/toronto-stadium/" target="_blank" rel="noopener noreferrer" style={{ color: "#f2d76b", textDecoration: "underline" }}>Toronto Stadium Parking</a></p>
+                  <p style={{ marginTop: "4px" }}><a href="https://www.justpark.com/us/event-parking/fifa-world-cup-2026/fifa-worldcup-2026-vancouver/" target="_blank" rel="noopener noreferrer" style={{ color: "#f2d76b", textDecoration: "underline" }}>Vancouver Stadium Parking</a></p>
                 </div>
               )}
             </div>
@@ -687,12 +822,12 @@ export default function Page() {
                   color: "#ffffff"
                 }}
               >
-                Can I leave the stadium and re-enter?
+                How do I access my ticketing account or get account help?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 6 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 6 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>No. There is a strict no re-entry policy once you have scanned your ticket and entered the stadium.</p>
+                  <p>If you are facing difficulties or have a question, please email <a href="mailto:jpmchosting@visa.com" style={{ color: "#f2d76b", textDecoration: "underline" }}>jpmchosting@visa.com</a> or your primary JPMC contact.</p>
                 </div>
               )}
             </div>
@@ -717,12 +852,12 @@ export default function Page() {
                   color: "#ffffff"
                 }}
               >
-                What is the Code of Conduct?
+                How early should I arrive at the stadium?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 7 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 7 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>All guests are expected to treat fans, staff, and players with respect. Abusive, discriminatory, or violent conduct is strictly prohibited and may result in removal.</p>
+                  <p>Guests should plan to arrive at least 90 minutes before kickoff to allow time for security screening, navigate any event‑day crowds, and enjoy the pre‑match atmosphere.</p>
                 </div>
               )}
             </div>
@@ -747,12 +882,158 @@ export default function Page() {
                   color: "#ffffff"
                 }}
               >
-                When do I need to confirm my attendance?
+                What ID or documents should I bring?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 8 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 8 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>Please submit your RSVP via this website immediately. Final guest RSVPs must be completed by May 7, 2026, to ensure you are registered in the system by the global deadline.</p>
+                  <p>You should bring your digital match ticket and a government‑issued photo ID, ideally with a name that matches your ticket. International visitors are encouraged to carry a copy of their passport in case it is needed for verification.</p>
+                </div>
+              )}
+            </div>
+
+            {/* FAQ 9 */}
+            <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
+              <button
+                onClick={() => setOpenFaq(openFaq === 9 ? null : 9)}
+                style={{
+                  width: "100%",
+                  padding: "24px 0",
+                  textAlign: "left",
+                  backgroundColor: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
+                  fontWeight: "600",
+                  color: "#ffffff"
+                }}
+              >
+                Are there bag or personal item restrictions?
+                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 9 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
+              </button>
+              {openFaq === 9 && (
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <p>To keep everyone safe and moving through security quickly, fans are encouraged to travel light.</p>
+                  <p style={{ marginTop: "12px" }}>Ticket holders are only permitted to bring certain types of bags into stadiums. These approved bags must be clear and made of plastic, vinyl, or PVC material. Those bags must not exceed 12" x 6" x 12" (30 cm x 30 cm x 15 cm). Additionally, small clutch purses or wallets approximately the size of a hand are allowed, even if not clear, and no larger than 4.5" x 6.5" (11 cm x 16.5 cm).</p>
+                  <p style={{ marginTop: "12px" }}>FIFA has strict rules regarding bags and only small personal bags are typically permitted. Larger bags such as backpacks or oversized purses are not allowed, and most venues do not offer bag‑check services, so guests should bring only essential items.</p>
+                  <p style={{ marginTop: "12px" }}>Please refer to the <a href="https://digitalhub.fifa.com/m/50ebae81c412b7d5/original/FIFA-World-Cup-2026-Stadium-Code-of-Conduct.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#f2d76b", textDecoration: "underline" }}>Stadium Code of Conduct</a> for a complete list of permitted and prohibited items. In addition to this list, FIFA, stadium authorities, and/or government authorities reserve the right to make the final decision on whether any item brought to or into the stadium is prohibited.</p>
+                  
+                  <p style={{ marginTop: "16px" }}><strong>Permitted items:</strong></p>
+                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
+                    <li>Small personal items — phone, wallet, keys</li>
+                    <li>Medically necessary items — including prescribed medication</li>
+                    <li>Accessibility or caregiving items</li>
+                    <li>Small flags or signs — non‑political, non‑offensive, non‑commercial; must not block views or walkways</li>
+                  </ul>
+                  <p style={{ marginTop: "8px" }}>All permitted items are subject to inspection.</p>
+                </div>
+              )}
+            </div>
+
+            {/* FAQ 10 */}
+            <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
+              <button
+                onClick={() => setOpenFaq(openFaq === 10 ? null : 10)}
+                style={{
+                  width: "100%",
+                  padding: "24px 0",
+                  textAlign: "left",
+                  backgroundColor: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
+                  fontWeight: "600",
+                  color: "#ffffff"
+                }}
+              >
+                What items are prohibited inside the stadium?
+                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 10 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
+              </button>
+              {openFaq === 10 && (
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <ul style={{ paddingLeft: "20px" }}>
+                    <li>Outside food and beverage</li>
+                    <li>Bags larger than 30 cm x 40 cm</li>
+                    <li>Weapons or dangerous objects</li>
+                    <li>Fireworks, flares, smoke devices, or pyrotechnics</li>
+                    <li>Alcohol or illegal substances</li>
+                    <li>Glass, metal, or hard objects</li>
+                    <li>Professional recording or broadcast equipment (unless authorized)</li>
+                    <li>Musical instruments or noisemaking devices (unless approved)</li>
+                    <li>Items that block views or disrupt stadium operations</li>
+                    <li>Political, offensive, discriminatory, or commercial materials</li>
+                  </ul>
+                  <p style={{ marginTop: "12px" }}>All items are subject to inspection. FIFA, stadium operators, and local authorities reserve the right to refuse entry for any item that is deemed unsafe, inappropriate, or disruptive, even if it is not specifically listed above.</p>
+                </div>
+              )}
+            </div>
+
+            {/* FAQ 11 */}
+            <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
+              <button
+                onClick={() => setOpenFaq(openFaq === 11 ? null : 11)}
+                style={{
+                  width: "100%",
+                  padding: "24px 0",
+                  textAlign: "left",
+                  backgroundColor: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
+                  fontWeight: "600",
+                  color: "#ffffff"
+                }}
+              >
+                Can I leave and re‑enter the stadium?
+                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 11 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
+              </button>
+              {openFaq === 11 && (
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <p>No. Re‑entry is not allowed once you exit the secure stadium area, so please ensure you have everything you need before entering.</p>
+                </div>
+              )}
+            </div>
+
+            {/* FAQ 12 */}
+            <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
+              <button
+                onClick={() => setOpenFaq(openFaq === 12 ? null : 12)}
+                style={{
+                  width: "100%",
+                  padding: "24px 0",
+                  textAlign: "left",
+                  backgroundColor: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
+                  fontWeight: "600",
+                  color: "#ffffff"
+                }}
+              >
+                Will food and drinks be available inside the stadium?
+                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 12 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
+              </button>
+              {openFaq === 12 && (
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <p>Yes. A full selection of standard stadium food and beverages will be available for purchase throughout the match.</p>
+                  <p style={{ marginTop: "12px" }}>The stadium operates as a cashless venue — all purchases must be made using credit or debit cards.</p>
+                  <p style={{ marginTop: "12px" }}><strong>Helpful tip:</strong> Use the $200 prepaid Visa card included in your welcome kit to enjoy food and beverages during the match.</p>
                 </div>
               )}
             </div>
