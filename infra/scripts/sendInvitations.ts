@@ -36,7 +36,7 @@ async function sendInvitationEmail(recipient: Recipient) {
           <!-- Hero Section with Image -->
           <tr>
             <td style="padding: 0;">
-              <img src="${LANDING_PAGE_URL}/jpmc-invite-email-hero.png" alt="You're Invited" style="width: 100%; height: auto; display: block;" />
+              <img src="${LANDING_PAGE_URL}/JPMC_Visa_Invite_Email_Invite.png" alt="You're Invited" style="width: 100%; height: auto; display: block;" />
             </td>
           </tr>
 
@@ -81,14 +81,14 @@ async function sendInvitationEmail(recipient: Recipient) {
               <!-- RSVP Button -->
               <div style="text-align: center; margin: 0 0 20px 0;">
                 <a href="${LANDING_PAGE_URL}" 
-                   style="display: inline-block; background-color: #D50101; color: #ffffff; text-decoration: none; padding: 14px 50px; border-radius: 8px; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 8px rgba(213, 1, 1, 0.3);">
+                   style="display: inline-block; background-color: #8B6F47; color: #ffffff; text-decoration: none; padding: 14px 50px; border-radius: 8px; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 8px rgba(139, 111, 71, 0.3);">
                   RSVP
                 </a>
               </div>
               
               <!-- JPMC Logo -->
               <div style="text-align: center; margin: 20px 0 0 0; padding: 10px 0;">
-                <img src="${LANDING_PAGE_URL}/JPMC_Logo_Standard_Black_RGB.png" alt="J.P. Morgan" style="height: 48px; width: auto; display: inline-block;" />
+                <img src="${LANDING_PAGE_URL}/JPMC_Logo_Standard_Black_RGB.png" alt="J.P. Morgan" style="height: 24px; width: auto; display: inline-block;" />
               </div>
 
             </td>
@@ -105,7 +105,7 @@ async function sendInvitationEmail(recipient: Recipient) {
 
           <!-- Decorative Footer with Background -->
           <tr>
-            <td style="padding: 0; background-image: url('${LANDING_PAGE_URL}/bg-image.png'); background-size: cover; background-position: center; height: 80px; overflow: hidden;">
+            <td style="padding: 0; background-image: url('${LANDING_PAGE_URL}/jpmc-mobile-hero.png'); background-size: cover; background-position: center; height: 80px; overflow: hidden;">
             </td>
           </tr>
 

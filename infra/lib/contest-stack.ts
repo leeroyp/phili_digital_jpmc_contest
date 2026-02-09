@@ -32,6 +32,7 @@ export class ContestStack extends cdk.Stack {
       runtime: lambda.Runtime.NODEJS_20_X,
       environment: {
         FROM_EMAIL: process.env.FROM_EMAIL ?? "replace-me@example.com",
+        LANDING_PAGE_URL: process.env.LANDING_PAGE_URL ?? "https://phili-digital-jpmc-contest.vercel.app",
       },
     });
 
@@ -61,6 +62,7 @@ export class ContestStack extends cdk.Stack {
       environment: {
         TABLE_NAME: table.tableName,
         FROM_EMAIL: process.env.FROM_EMAIL ?? "replace-me@example.com",
+        LANDING_PAGE_URL: process.env.LANDING_PAGE_URL ?? "https://phili-digital-jpmc-contest.vercel.app",
         DEDUPE_SALT: process.env.DEDUPE_SALT ?? "replace-me-with-long-secret",
         SCHEDULE_GROUP: scheduleGroup.name!,
         SCHEDULER_TARGET_ROLE_ARN: schedulerInvokeRole.roleArn,

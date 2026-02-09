@@ -3,9 +3,11 @@
   "private": true,
   "scripts": {
     "deploy:dev": "cdk deploy --context stage=dev",
-    "deploy:prod": "cdk deploy --context stage=prod"
+    "deploy:prod": "cdk deploy --context stage=prod",
+    "sendInvitations": "ts-node scripts/sendInvitations.ts"
   },
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.985.0",
     "aws-cdk-lib": "^2.160.0",
     "constructs": "^10.3.0"
   },

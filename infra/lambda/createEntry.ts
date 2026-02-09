@@ -126,7 +126,7 @@ export const handler = async (event: any) => {
           <!-- Hero Section with Image -->
           <tr>
             <td style="padding: 0;">
-              <img src="${LANDING_PAGE_URL}/jpmc-invite-email-hero.png" alt="You're Registered" style="width: 100%; height: auto; display: block;" />
+              <img src="${LANDING_PAGE_URL}/JPMC_Visa_Invite_Email_ThankYou.png" alt="You're Registered" style="width: 100%; height: auto; display: block;" />
             </td>
           </tr>
 
@@ -160,7 +160,7 @@ export const handler = async (event: any) => {
               
               <!-- JPMC Logo -->
               <div style="text-align: center; margin: 20px 0 0 0; padding: 10px 0;">
-                <img src="${LANDING_PAGE_URL}/JPMC_Logo_Standard_Black_RGB.png" alt="J.P. Morgan" style="height: 48px; width: auto; display: inline-block;" />
+                <img src="${LANDING_PAGE_URL}/JPMC_Logo_Standard_Black_RGB.png" alt="J.P. Morgan" style="height: 24px; width: auto; display: inline-block;" />
               </div>
 
             </td>
@@ -177,7 +177,7 @@ export const handler = async (event: any) => {
 
           <!-- Decorative Footer with Background -->
           <tr>
-            <td style="padding: 0; background-image: url('${LANDING_PAGE_URL}/bg-image.png'); background-size: cover; background-position: center; height: 80px; overflow: hidden;">
+            <td style="padding: 0; background-image: url('${LANDING_PAGE_URL}/jpmc-mobile-hero.png'); background-size: cover; background-position: center; height: 80px; overflow: hidden;">
             </td>
           </tr>
 

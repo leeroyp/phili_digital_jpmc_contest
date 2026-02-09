@@ -309,9 +309,9 @@ export default function Page() {
                 Thank you for registering for the FIFA World Cup 2026™ thanks to Visa. You will receive an email momentarily with more information on how to access your tickets.
               </p>
 
-              {/* Moneris Logo Only */}
+              {/* JPMC Logo Only */}
               <div style={{ display: "flex", alignItems: "center" }}>
-                <img src="/moneris-logo.png" alt="Moneris" style={{ height: "clamp(32px, 4vw, 48px)", width: "auto" }} />
+                <img src="/JPMC_Logo_Standard_White_RGB.png" alt="J.P. Morgan" style={{ height: "clamp(32px, 4vw, 48px)", width: "auto" }} />
               </div>
             </div>
           </div>
