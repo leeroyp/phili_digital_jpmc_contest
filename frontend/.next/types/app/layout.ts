@@ -1,4 +1,4 @@
-// File: /Users/leeroyphili/Desktop/contest-starter/frontend/app/layout.tsx
+// File: /Users/phili-digital/Dev/jpmc/phili_digital_jpmc_contest/frontend/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

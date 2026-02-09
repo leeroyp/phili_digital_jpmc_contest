@@ -107,11 +107,12 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-385487773037-ca-central-1",
-     "S3Key": "063adc8eebc84cb832b8c3e418a3d31422a9766e578c37a40aaa1df5b3e85a68.zip"
+     "S3Key": "787cc5572f2cff75d5457cee77e44e7cdcb5e92d7cb51dfc67a39eea3ae529c6.zip"
     },
     "Environment": {
      "Variables": {
-      "FROM_EMAIL": "leeroyphili@gmail.com"
+      "FROM_EMAIL": "test@phili-digital.com",
+      "LANDING_PAGE_URL": "https://phili-digital-jpmc-contest.vercel.app"
      }
     },
     "Handler": "index.handler",
@@ -129,7 +130,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "ContestStack/SendScheduledEmailFn/Resource",
-    "aws:asset:path": "asset.063adc8eebc84cb832b8c3e418a3d31422a9766e578c37a40aaa1df5b3e85a68",
+    "aws:asset:path": "asset.787cc5572f2cff75d5457cee77e44e7cdcb5e92d7cb51dfc67a39eea3ae529c6",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -304,14 +305,15 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-385487773037-ca-central-1",
-     "S3Key": "ba1a657e8245885d740bfcf0100d328a6ddc3ede73ca9fd8fea564311cca10a6.zip"
+     "S3Key": "14e7d67524e0cf1d77610fa288b411ae6276307c5e721918151f869f5644999f.zip"
     },
     "Environment": {
      "Variables": {
       "TABLE_NAME": {
        "Ref": "EntriesTableB11133D8"
       },
-      "FROM_EMAIL": "leeroyphili@gmail.com",
+      "FROM_EMAIL": "test@phili-digital.com",
+      "LANDING_PAGE_URL": "https://phili-digital-jpmc-contest.vercel.app",
       "DEDUPE_SALT": "replace-me-with-long-secret",
       "SCHEDULE_GROUP": "contest-dev-schedules",
       "SCHEDULER_TARGET_ROLE_ARN": {
@@ -343,7 +345,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "ContestStack/CreateEntryFn/Resource",
-    "aws:asset:path": "asset.ba1a657e8245885d740bfcf0100d328a6ddc3ede73ca9fd8fea564311cca10a6",
+    "aws:asset:path": "asset.14e7d67524e0cf1d77610fa288b411ae6276307c5e721918151f869f5644999f",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -461,7 +463,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/12PS27DMAxEz5K9wiY2eoAkQD+btnC6D2iJceSPZJhUDMPQ3QvZaRddzQwxfCAzyPJn2G1w5K02zba1JcxnQd0oHPkym8lh500J8zeWLanT1S0mKtY3MqGlAU5Xd36E18GHXrXYlQYvzhuqGT4WeQlOi/VOWexgLvzKWvTLt1ZPKa4uKs4vyEzCcEiiOIdj0A3JEZkeeJhPV/dHTcs0dJbZehcV9rZCoRGnewbzm0h/6G0qJUnxLFgtF6wmjQofZHXvTqga8Bf8Ly69GFVB7MOgSS03Jo51VSp8BumDRJX+h5qf7tkO9nvYbWq2djsEJ7YjKFb9AWle2G6BAQAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/11QyU7DMBD9Fu7OgFKVe4vEcgGUco8m9pA6ix157FZRlH/HdgoHTm/Rm6eZKaHc7eHhDq9cSNUXg25gOXmUvYhWvajZ4GhVNL+wGUg8fZtMVsHyTCoM5CB6p5t4cTZMYsCxUVgbq6hjeM/wHIz02hqhcYSlsltXxk87aDknubHYvauRmTzDIUHUcAyyJ39Epls9LHHgrzUNkxs1c1SrwEm36OmK86WE5dX76TDpFEqQZDyxzRtsJFmVDX5jb8ZT6/C3+J/MuXUVFbENTpLIO6YebdoU+Ah+Cn4V6X7o+P5S7uEx/rhjrQsXjNcjQbXhD/yab0OAAQAA"
    },
    "Metadata": {
     "aws:cdk:path": "ContestStack/CDKMetadata/Default"

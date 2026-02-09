@@ -1,46 +1,46 @@
 {
   "version": "48.0.0",
   "files": {
-    "063adc8eebc84cb832b8c3e418a3d31422a9766e578c37a40aaa1df5b3e85a68": {
+    "787cc5572f2cff75d5457cee77e44e7cdcb5e92d7cb51dfc67a39eea3ae529c6": {
       "displayName": "SendScheduledEmailFn/Code",
       "source": {
-        "path": "asset.063adc8eebc84cb832b8c3e418a3d31422a9766e578c37a40aaa1df5b3e85a68",
+        "path": "asset.787cc5572f2cff75d5457cee77e44e7cdcb5e92d7cb51dfc67a39eea3ae529c6",
         "packaging": "zip"
       },
       "destinations": {
-        "385487773037-ca-central-1-d8e64a26": {
+        "385487773037-ca-central-1-5289ec01": {
           "bucketName": "cdk-hnb659fds-assets-385487773037-ca-central-1",
-          "objectKey": "063adc8eebc84cb832b8c3e418a3d31422a9766e578c37a40aaa1df5b3e85a68.zip",
+          "objectKey": "787cc5572f2cff75d5457cee77e44e7cdcb5e92d7cb51dfc67a39eea3ae529c6.zip",
           "region": "ca-central-1",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::385487773037:role/cdk-hnb659fds-file-publishing-role-385487773037-ca-central-1"
         }
       }
     },
-    "ba1a657e8245885d740bfcf0100d328a6ddc3ede73ca9fd8fea564311cca10a6": {
+    "14e7d67524e0cf1d77610fa288b411ae6276307c5e721918151f869f5644999f": {
       "displayName": "CreateEntryFn/Code",
       "source": {
-        "path": "asset.ba1a657e8245885d740bfcf0100d328a6ddc3ede73ca9fd8fea564311cca10a6",
+        "path": "asset.14e7d67524e0cf1d77610fa288b411ae6276307c5e721918151f869f5644999f",
         "packaging": "zip"
       },
       "destinations": {
-        "385487773037-ca-central-1-35bfc75f": {
+        "385487773037-ca-central-1-7e738eb5": {
           "bucketName": "cdk-hnb659fds-assets-385487773037-ca-central-1",
-          "objectKey": "ba1a657e8245885d740bfcf0100d328a6ddc3ede73ca9fd8fea564311cca10a6.zip",
+          "objectKey": "14e7d67524e0cf1d77610fa288b411ae6276307c5e721918151f869f5644999f.zip",
           "region": "ca-central-1",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::385487773037:role/cdk-hnb659fds-file-publishing-role-385487773037-ca-central-1"
         }
       }
     },
-    "c42110ff00a29e5c265407bd0ff18c1a006f2a5484d0189d227252fa0aa8a3a2": {
+    "8a848244cf5f35ec76db71563a583a59f59dbeabf84347dc3e4f24ec1545d5a2": {
       "displayName": "ContestStack Template",
       "source": {
         "path": "ContestStack.template.json",
         "packaging": "file"
       },
       "destinations": {
-        "385487773037-ca-central-1-7a3f7aba": {
+        "385487773037-ca-central-1-154e6134": {
           "bucketName": "cdk-hnb659fds-assets-385487773037-ca-central-1",
-          "objectKey": "c42110ff00a29e5c265407bd0ff18c1a006f2a5484d0189d227252fa0aa8a3a2.json",
+          "objectKey": "8a848244cf5f35ec76db71563a583a59f59dbeabf84347dc3e4f24ec1545d5a2.json",
           "region": "ca-central-1",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::385487773037:role/cdk-hnb659fds-file-publishing-role-385487773037-ca-central-1"
         }
