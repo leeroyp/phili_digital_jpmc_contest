@@ -319,17 +319,28 @@ export default function Page() {
 
         {/* Contest Form */}
         {showForm && (
-          <div id="contest-form" style={{ 
-            maxWidth: 950, 
-            width: "100%", 
-            backgroundColor: "transparent", 
-            padding: "clamp(24px, 4vw, 40px)",
-            borderRadius: 12, 
-            marginTop: "28px", 
-            marginBottom: "60px",
-            marginLeft: "clamp(0px, -10vw, -150px)",
-            border: "1px solid rgba(255, 255, 255, 0.2)",
-          }}>
+          <>
+            {/* VISA Logo above form */}
+            <div style={{ 
+              maxWidth: 950, 
+              width: "100%", 
+              marginLeft: "clamp(0px, -10vw, -150px)",
+              marginBottom: "clamp(16px, 2vw, 24px)"
+            }}>
+              <img src="/visa-logo-hero.png" alt="VISA | FIFA" style={{ height: "clamp(56px, 10vw, 100px)", width: "auto" }} />
+            </div>
+            
+            <div id="contest-form" style={{ 
+              maxWidth: 950, 
+              width: "100%", 
+              backgroundColor: "transparent", 
+              padding: "clamp(24px, 4vw, 40px)",
+              borderRadius: 12, 
+              marginTop: "28px", 
+              marginBottom: "60px",
+              marginLeft: "clamp(0px, -10vw, -150px)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+            }}>
             <h2 style={{ 
               fontFamily: '"FWC26-CondensedBlack", sans-serif',
               fontSize: "clamp(28px, 4vw, 36px)", 
@@ -601,6 +612,7 @@ export default function Page() {
         </button>
       </form>
       </div>
+          </>
         )}
 
         {/* FAQ Section */}
@@ -1113,9 +1125,14 @@ export default function Page() {
           lineHeight: "clamp(11px, 1.8vw, 14px)", 
           color: "#ffffff", 
           opacity: 0.7,
-          padding: "0 10px"
+          padding: "0 10px",
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
+          gap: "20px"
         }}>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+          <p style={{ flex: 1, margin: 0 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+          <img src="/JPMC_Logo_Standard_White_RGB.png" alt="JPMorgan Chase" style={{ height: "clamp(18px, 2.5vw, 28px)", width: "auto", flexShrink: 0, opacity: 1, filter: "brightness(1.5) contrast(1.1)" }} />
         </div>
       </main>
     </>
