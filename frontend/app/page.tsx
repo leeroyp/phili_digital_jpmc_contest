@@ -286,7 +286,7 @@ export default function Page() {
                 margin: "0",
                 textAlign: "center",
               }}>
-                A front row seat to history
+                A match day seat awaits
               </h1>
               
               <p style={{
@@ -891,7 +891,6 @@ export default function Page() {
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
                   <p>Yes, general parking pass sales for FIFA World Cup 2026™ will be available closer to the time of the match. For specific information, visit the official FIFA World Cup 2026™ parking website to stay up to date on when parking is available.</p>
                   <p style={{ marginTop: "8px" }}><a href="https://www.justpark.com/us/event-parking/fifa-world-cup-2026/toronto-stadium/" target="_blank" rel="noopener noreferrer" style={{ color: "#f2d76b", textDecoration: "underline" }}>Toronto Stadium Parking</a></p>
-                  <p style={{ marginTop: "4px" }}><a href="https://www.justpark.com/us/event-parking/fifa-world-cup-2026/fifa-worldcup-2026-vancouver/" target="_blank" rel="noopener noreferrer" style={{ color: "#f2d76b", textDecoration: "underline" }}>Vancouver Stadium Parking</a></p>
                 </div>
               )}
             </div>

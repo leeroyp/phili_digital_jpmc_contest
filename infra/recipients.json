@@ -1,22 +1,7 @@
 [
   {
-    "email": "test@phili-digital.com",
+    "email": "leeroyphili@phili-digital.com",
     "firstName": "Leeroy",
     "lastName": "Phili"
-  },
-   {
-    "email": "Leanne.Karat@behaviour.com",
-    "firstName": "Leanne",
-    "lastName": "Karat"
-  },
-  {
-    "email": "erica.cleghorn@behaviour.com",
-    "firstName": "Erica",
-    "lastName": "Cleghorn"
-  },
-   {
-    "email": "kat.tapp@behaviour.com",
-    "firstName": "Kat",
-    "lastName": "Tapp"
   }
 ]
