@@ -138,10 +138,14 @@ export default function Page() {
       <main
         style={{
           minHeight: "calc(100vh - 64px)",
+          width: "100%",
+          minWidth: "100vw",
           backgroundImage: "url(/jpmc-GoldGradient-bg.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "#1a1205",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -149,6 +153,7 @@ export default function Page() {
           padding: "clamp(88px, 8vw, 112px) clamp(16px, 5vw, 80px) 60px",
           gap: "40px",
           position: "relative",
+          boxSizing: "border-box",
         }}
       >
         {/* Hero Content Section */}
@@ -674,6 +679,9 @@ export default function Page() {
         >
           {loading ? "Submitting..." : "Register"}
         </button>
+        </div>
+        <div style={{ display: "flex", justifyContent: "center", width: "100%", marginTop: "20px" }}>
+          <img src="/JPMC_Logo_Standard_White_RGB.png" alt="JPMorgan Chase" style={{ height: "clamp(24px, 3vw, 36px)", width: "auto" }} />
         </div>
       </form>
       </div>
