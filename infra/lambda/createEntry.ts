@@ -147,11 +147,6 @@ export const handler = async (event: any) => {
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 30px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
                 Stay tuned for further details on your ticket.
               </p>
-              
-              <!-- JPMC Logo -->
-              <div style="text-align: center; margin: 20px 0 0 0; padding: 10px 0;">
-                <img src="${LANDING_PAGE_URL}/JPMC_Logo_Standard_Black_RGB.png" alt="J.P. Morgan" style="height: 24px; width: auto; display: inline-block;" />
-              </div>
 
             </td>
           </tr>

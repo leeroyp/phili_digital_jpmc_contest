@@ -89,11 +89,6 @@ async function sendInvitationEmail(recipient: Recipient) {
                   RSVP
                 </a>
               </div>
-              
-              <!-- JPMC Logo -->
-              <div style="text-align: center; margin: 20px 0 0 0; padding: 10px 0;">
-                <img src="${LANDING_PAGE_URL}/JPMC_Logo_Standard_Black_RGB.png" alt="J.P. Morgan" style="height: 24px; width: auto; display: inline-block;" />
-              </div>
 
             </td>
           </tr>

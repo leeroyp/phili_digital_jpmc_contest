@@ -107,12 +107,12 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-385487773037-ca-central-1",
-     "S3Key": "787cc5572f2cff75d5457cee77e44e7cdcb5e92d7cb51dfc67a39eea3ae529c6.zip"
+     "S3Key": "37a586fff87bf451ed16dd3ec27fd71c66f19afa6e961caeb22317531659b023.zip"
     },
     "Environment": {
      "Variables": {
       "FROM_EMAIL": "test@phili-digital.com",
-      "LANDING_PAGE_URL": "https://phili-digital-jpmc-contest.vercel.app"
+      "LANDING_PAGE_URL": "https://phili-digital-jpmc-contest.vercel.app/"
      }
     },
     "Handler": "index.handler",
@@ -130,7 +130,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "ContestStack/SendScheduledEmailFn/Resource",
-    "aws:asset:path": "asset.787cc5572f2cff75d5457cee77e44e7cdcb5e92d7cb51dfc67a39eea3ae529c6",
+    "aws:asset:path": "asset.37a586fff87bf451ed16dd3ec27fd71c66f19afa6e961caeb22317531659b023",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -305,7 +305,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-385487773037-ca-central-1",
-     "S3Key": "14e7d67524e0cf1d77610fa288b411ae6276307c5e721918151f869f5644999f.zip"
+     "S3Key": "6c1fd45f565f9af053b6aebfa6ac2a552df29358747afac89543c21d5239d65a.zip"
     },
     "Environment": {
      "Variables": {
@@ -313,7 +313,7 @@
        "Ref": "EntriesTableB11133D8"
       },
       "FROM_EMAIL": "test@phili-digital.com",
-      "LANDING_PAGE_URL": "https://phili-digital-jpmc-contest.vercel.app",
+      "LANDING_PAGE_URL": "https://phili-digital-jpmc-contest.vercel.app/",
       "DEDUPE_SALT": "replace-me-with-long-secret",
       "SCHEDULE_GROUP": "contest-dev-schedules",
       "SCHEDULER_TARGET_ROLE_ARN": {
@@ -345,7 +345,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "ContestStack/CreateEntryFn/Resource",
-    "aws:asset:path": "asset.14e7d67524e0cf1d77610fa288b411ae6276307c5e721918151f869f5644999f",
+    "aws:asset:path": "asset.6c1fd45f565f9af053b6aebfa6ac2a552df29358747afac89543c21d5239d65a",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
