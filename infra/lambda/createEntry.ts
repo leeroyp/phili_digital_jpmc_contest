@@ -141,21 +141,11 @@ export const handler = async (event: any) => {
               
               <!-- Body Copy -->
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Thank you for registering for the match. We look forward to hosting you at the FIFA World Cup 26<sup style="font-size: 10px;">TM</sup> thanks to Visa.
+                Thank you for registering for the match. We look forward to seeing you at the FIFA World Cup 26<sup style="font-size: 10px;">TM</sup> thanks to Visa.
               </p>
-              
-              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Please note, FIFA World Cup 2026 is a mobile-only entry tournament. Your mobile tickets will not be sent via email. You will have to access them using the FIFA World Cup 2026<sup style="font-size: 10px;">TM</sup> App. Tickets will be sent out 20 days prior to the match. Please see details below for how to register:
-              </p>
-              
-              <ul style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 20px; padding: 0; font-size: 14px; font-weight: 400; line-height: 1.8;">
-                <li style="margin-bottom: 8px;">Download the FIFA World Cup 2026<sup style="font-size: 10px;">TM</sup> tournament app from the App Store or Google Play Store.</li>
-                <li style="margin-bottom: 8px;">Create an account using the same name and email that you used to register for the match.</li>
-                <li style="margin-bottom: 8px;">Follow the on-screen steps to complete your profile.</li>
-              </ul>
               
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 30px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                The wait is on; you will receive your FIFA tickets at least 20 days prior to the match.
+                Stay tuned for further details on your ticket.
               </p>
               
               <!-- JPMC Logo -->
@@ -194,17 +184,9 @@ Hi ${firstName},
 
 YOU'RE REGISTERED for the FIFA World Cup 2026™ thanks to Visa
 
-Thank you for registering for the match. We look forward to hosting you at the FIFA World Cup 26™ thanks to Visa.
+Thank you for registering for the match. We look forward to seeing you at the FIFA World Cup 26™ thanks to Visa.
 
-Please note, FIFA World Cup 2026 is a mobile-only entry tournament. Your mobile tickets will not be sent via email. You will have to access them using the FIFA World Cup 2026™ App. Tickets will be sent out 20 days prior to the match. Please see details below for how to register:
-
-- Download the FIFA World Cup 2026™ tournament app from the App Store or Google Play Store.
-- Create an account using the same name and email that you used to register for the match.
-- Follow the on-screen steps to complete your profile.
-
-The wait is on; you will receive your FIFA tickets at least 20 days prior to the match.
-
-Powered by Moneris
+Stay tuned for further details on your ticket.
       `.trim();
 
       await ses.send(new SendEmailCommand({

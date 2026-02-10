@@ -51,19 +51,15 @@ async function sendInvitationEmail(recipient: Recipient) {
               
               <!-- Body Copy -->
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                The FIFA World Cup 2026<sup style="font-size: 10px;">TM</sup> in Toronto is ready for you, thanks to Visa. Step into an exclusive, invite-only day filled with premium seating, VIP access, and a custom Match Day Kit.
+                Few will witness the FIFA World Cup 2026<sup style="font-size: 10px;">TM</sup> live in Toronto.
               </p>
               
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                From kickoff to the final whistle, every moment is designed to put you at the heart of the action—it's your front-row seat to history.
-              </p>
-              
-              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                RSVP today to confirm your attendance.
+                RSVP now to secure your place at football's biggest stage.
               </p>
               
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 10px 0; font-size: 14px; font-weight: 700; line-height: 1.6;">
-                Wednesday, June 17, 2026
+                Friday, June 12, 2026
               </p>
               
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 10px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
@@ -74,8 +70,16 @@ async function sendInvitationEmail(recipient: Recipient) {
                 Recommended arrival 1 hour to kick off
               </p>
               
+              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
+                Kick off at 3pm ET
+              </p>
+              
+              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 10px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
+                Stay tuned for more details and additional match day information.
+              </p>
+              
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 30px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Kick off at 7pm ET
+                We look forward to seeing you there!
               </p>
               
               <!-- RSVP Button -->
@@ -122,7 +126,17 @@ Hello!
 
 YOU'RE INVITED to FIFA World Cup 26™ thanks to Visa
 
-Bat quunt lahorrum ae runte sequi omnimos aperiaspis rebent occaturi? Ut dolum, voluptat mi, nimusant dolorumque landiti orerupis quiae moluptat cus et, odis aut quibus simusam Lantio rerupis quate sinci harum qui que
+Few will witness the FIFA World Cup 2026™ live in Toronto.
+
+RSVP now to secure your place at football's biggest stage.
+
+Friday, June 12, 2026
+FIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)
+Recommended arrival 1 hour to kick off
+Kick off at 3pm ET
+
+Stay tuned for more details and additional match day information.
+We look forward to seeing you there!
 
 RSVP: ${LANDING_PAGE_URL}
 

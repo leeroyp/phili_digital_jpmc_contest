@@ -159,19 +159,85 @@ export default function Page() {
             display: "flex",
             borderRadius: "24px",
             overflow: "hidden",
-            boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
+            boxShadow: "0 4px 16px rgba(0, 0, 0, 0.2), 0 16px 48px rgba(30, 15, 0, 0.35), 0 40px 100px rgba(20, 10, 0, 0.5), 0 0 60px rgba(180, 140, 60, 0.12)",
             minHeight: "400px",
             flexDirection: "row",
           }}>
             <style jsx>{`
+              .hero-divider {
+                width: 26px;
+                flex-shrink: 0;
+                position: relative;
+                align-self: stretch;
+                background: linear-gradient(90deg,
+                  #151515 0%,
+                  #151515 4%,
+                  rgba(255, 232, 170, 0.35) 4%,
+                  rgba(255, 232, 170, 0.35) 6%,
+                  #3b2216 6%,
+                  #3b2216 22%,
+                  #d9c08a 22%,
+                  #d9c08a 26%,
+                  #c9ad7a 26%,
+                  #bfa37a 70%,
+                  #6a543f 70%,
+                  #6a543f 76%,
+                  #21120f 76%,
+                  #21120f 96%,
+                  rgba(255, 232, 170, 0.18) 96%,
+                  rgba(255, 232, 170, 0.18) 100%
+                );
+                box-shadow:
+                  inset 1px 0 0 rgba(255, 240, 200, 0.18),
+                  inset -1px 0 0 rgba(0, 0, 0, 0.25);
+              }
+              .hero-divider::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg,
+                  rgba(255,255,255,0.10) 0%,
+                  rgba(255,255,255,0.00) 35%,
+                  rgba(0,0,0,0.08) 70%,
+                  rgba(0,0,0,0.00) 100%
+                );
+                pointer-events: none;
+                mix-blend-mode: overlay;
+                opacity: 0.65;
+              }
               @media (max-width: 1023px) {
                 .hero-card-wrapper {
                   flex-direction: column !important;
                 }
                 .hero-divider {
                   width: 100% !important;
-                  height: 18px !important;
-                  background: linear-gradient(180deg, #7a5e2a 0%, #b8923d 12%, #d4aa4f 25%, #e8c45e 40%, #f2d76b 50%, #e8c45e 60%, #d4aa4f 75%, #b8923d 88%, #7a5e2a 100%) !important;
+                  height: 26px !important;
+                  background: linear-gradient(180deg,
+                    #151515 0%,
+                    #151515 4%,
+                    rgba(255, 232, 170, 0.35) 4%,
+                    rgba(255, 232, 170, 0.35) 6%,
+                    #3b2216 6%,
+                    #3b2216 22%,
+                    #d9c08a 22%,
+                    #d9c08a 26%,
+                    #c9ad7a 26%,
+                    #bfa37a 70%,
+                    #6a543f 70%,
+                    #6a543f 76%,
+                    #21120f 76%,
+                    #21120f 96%,
+                    rgba(255, 232, 170, 0.18) 96%,
+                    rgba(255, 232, 170, 0.18) 100%
+                  ) !important;
+                }
+                .hero-divider::after {
+                  background: linear-gradient(90deg,
+                    rgba(255,255,255,0.10) 0%,
+                    rgba(255,255,255,0.00) 35%,
+                    rgba(0,0,0,0.08) 70%,
+                    rgba(0,0,0,0.00) 100%
+                  ) !important;
                 }
               }
             `}</style>
@@ -179,8 +245,8 @@ export default function Page() {
             {/* Left Section - Dark with VISA Logo */}
             <div className="hero-left" style={{
               flex: "1",
-              backgroundColor: "#1a1a1a",
-              backgroundImage: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)",
+              backgroundColor: "#111111",
+              backgroundImage: "linear-gradient(135deg, #111111 0%, #1a1a1a 100%)",
               padding: "clamp(40px, 6vw, 80px) clamp(20px, 3vw, 40px)",
               display: "flex",
               flexDirection: "column",
@@ -196,13 +262,7 @@ export default function Page() {
             </div>
 
             {/* Gold Divider */}
-            <div className="hero-divider" style={{
-              width: "18px",
-              position: "relative",
-              flexShrink: 0,
-              background: "linear-gradient(90deg, #7a5e2a 0%, #b8923d 12%, #d4aa4f 25%, #e8c45e 40%, #f2d76b 50%, #e8c45e 60%, #d4aa4f 75%, #b8923d 88%, #7a5e2a 100%)",
-              boxShadow: "inset 1px 0 2px rgba(255,235,170,0.3), inset -1px 0 2px rgba(80,55,15,0.3)",
-            }}></div>
+            <div className="hero-divider"></div>
 
             {/* Right Section - Light with RSVP */}
             <div className="hero-right" style={{
@@ -238,7 +298,7 @@ export default function Page() {
                 maxWidth: "100%",
                 textAlign: "center",
               }}>
-                Step into an experience few will ever witness. As an exclusive guest, you’ll cheer Team Canada from front-row seats in Toronto and enjoy a bespoke Match Day Kit made for your day at the stadium. Be part of history at football’s biggest stage.
+                Step into an experience few will ever witness. Be part of history at football’s biggest stage.
               </p>
               <p style={{
                 fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif',
@@ -287,6 +347,7 @@ export default function Page() {
               >
                 RSVP
               </button>
+              <img src="/JPMC_Logo_Standard_Black_RGB.png" alt="JPMorgan Chase" style={{ height: "clamp(24px, 3vw, 36px)", width: "auto" }} />
             </div>
           </div>
         )}
@@ -296,22 +357,24 @@ export default function Page() {
             maxWidth: 950, 
             width: "100%", 
             color: "#ffffff", 
-            marginLeft: "clamp(0px, -10vw, -150px)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}>
-            <div className="hero-content">
+            <div className="hero-content" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               {/* VISA | FIFA Logo */}
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "8px", marginBottom: "clamp(24px, 4vw, 48px)" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", marginBottom: "clamp(24px, 4vw, 48px)" }}>
                 <img src="/visa-logo-hero.png" alt="VISA | FIFA" style={{ height: "clamp(56px, 10vw, 100px)", width: "auto" }} />
               </div>
 
               {/* Thank You Message */}
-              <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "clamp(14px, 2.5vw, 22px)", lineHeight: "clamp(20px, 3.5vw, 32px)", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px" }}>
+              <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "clamp(14px, 2.5vw, 22px)", lineHeight: "clamp(20px, 3.5vw, 32px)", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px", textAlign: "center" }}>
                 Thank you for registering for the FIFA World Cup 2026™ thanks to Visa. You will receive an email momentarily with more information on how to access your tickets.
               </p>
 
               {/* JPMC Logo Only */}
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <img src="/JPMC_Logo_Standard_White_RGB.png" alt="J.P. Morgan" style={{ height: "clamp(32px, 4vw, 48px)", width: "auto" }} />
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <img src="/JPMC_Logo_Standard_White_RGB.png" alt="J.P. Morgan" style={{ height: "clamp(24px, 3vw, 36px)", width: "auto" }} />
               </div>
             </div>
           </div>
@@ -324,8 +387,9 @@ export default function Page() {
             <div style={{ 
               maxWidth: 950, 
               width: "100%", 
-              marginLeft: "clamp(0px, -10vw, -150px)",
-              marginBottom: "clamp(16px, 2vw, 24px)"
+              marginBottom: "clamp(16px, 2vw, 24px)",
+              display: "flex",
+              justifyContent: "center",
             }}>
               <img src="/visa-logo-hero.png" alt="VISA | FIFA" style={{ height: "clamp(56px, 10vw, 100px)", width: "auto" }} />
             </div>
@@ -587,9 +651,9 @@ export default function Page() {
 
         {error && <div style={{ background: "rgba(255, 255, 255, 0.9)", color: "#C8102E", padding: 16, borderRadius: 8, fontWeight: "600" }}>{error}</div>}
 
+        <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
         <button type="submit" disabled={loading} className="form-input" style={{ 
           padding: "clamp(14px, 2vw, 18px) clamp(40px, 6vw, 70px)",
-          width: "90%", 
           borderRadius: "50px",
           cursor: loading ? "not-allowed" : "pointer",
           backgroundColor: "#8B6F47",
@@ -610,6 +674,7 @@ export default function Page() {
         >
           {loading ? "Submitting..." : "Register"}
         </button>
+        </div>
       </form>
       </div>
           </>
@@ -755,6 +820,23 @@ export default function Page() {
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
                   <p>Major events bring heavy traffic, road closures, and security perimeters. If you're planning to drive or use ride share/taxis, please leave extra time, expect delays, and arrive with patience — planning ahead is key to a smooth experience.</p>
                   
+                  <p style={{ marginTop: "16px" }}><strong>Vancouver Stadium</strong></p>
+                  <p style={{ marginTop: "8px" }}><strong>Ride Share / Taxi</strong></p>
+                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
+                    <li>Available, but event‑day traffic restrictions apply</li>
+                    <li>Drop‑off points may require a short walk to the stadium</li>
+                  </ul>
+                  <p style={{ marginTop: "8px" }}><strong>Driving</strong></p>
+                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
+                    <li>Limited downtown parking</li>
+                    <li>Expect congestion and possible road closures</li>
+                    <li>Plan to park farther away and walk</li>
+                  </ul>
+                  <p style={{ marginTop: "8px" }}><strong>Public Transit (alternative)</strong></p>
+                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
+                    <li>Accessible via Stadium–Chinatown or Vancouver City Centre stations</li>
+                  </ul>
+
                   <p style={{ marginTop: "16px" }}><strong>Toronto Stadium</strong></p>
                   <p style={{ marginTop: "8px" }}><strong>Ride Share / Taxi</strong></p>
                   <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
@@ -1132,7 +1214,6 @@ export default function Page() {
           gap: "20px"
         }}>
           <p style={{ flex: 1, margin: 0 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-          <img src="/JPMC_Logo_Standard_White_RGB.png" alt="JPMorgan Chase" style={{ height: "clamp(18px, 2.5vw, 28px)", width: "auto", flexShrink: 0, opacity: 1, filter: "brightness(1.5) contrast(1.1)" }} />
         </div>
       </main>
     </>

@@ -66,15 +66,11 @@ export const handler = async (event: Payload) => {
               
               <!-- Body Copy -->
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                ${bodyText}
-              </p>
-              
-              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                We're excited to welcome you to witness history at the FIFA World Cup 2026™, thanks to Visa.
+                Your match day seats at the FIFA World Cup 2026<sup style="font-size: 10px;">TM</sup> in Toronto are locked in, and the countdown to kickoff is on.
               </p>
               
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 10px 0; font-size: 14px; font-weight: 700; line-height: 1.6;">
-                Wednesday, June 17, 2026
+                Friday, June 12, 2026
               </p>
               
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 10px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
@@ -85,8 +81,12 @@ export const handler = async (event: Payload) => {
                 Recommended arrival 1 hour to kick off
               </p>
               
+              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
+                Kick off at 3pm ET
+              </p>
+              
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 30px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Kick off at 7pm ET
+                We look forward to seeing you there!
               </p>
               
               <!-- JPMC Logo -->
@@ -121,7 +121,7 @@ export const handler = async (event: Payload) => {
   `;
 
   const textBody = template === "reminder"
-    ? (locale === "fr" ? "Petit rappel : le tirage approche. Bonne chance!" : "Friendly reminder: the draw is coming up soon. Good luck!")
+    ? (locale === "fr" ? "Petit rappel : le tirage approche. Bonne chance!" : `Your match day seats at the FIFA World Cup 2026™ in Toronto are locked in, and the countdown to kickoff is on.\n\nFriday, June 12, 2026\nFIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)\nRecommended arrival 1 hour to kick off\nKick off at 3pm ET\n\nWe look forward to seeing you there!`)
     : (locale === "fr" ? "C'est le jour du tirage! Bonne chance!" : "It's draw day! Good luck!");
 
   await ses.send(new SendEmailCommand({
