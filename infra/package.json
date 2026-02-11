@@ -7,7 +7,7 @@
     "sendInvitations": "ts-node scripts/sendInvitations.ts"
   },
   "dependencies": {
-    "@aws-sdk/client-ses": "^3.985.0",
+    "resend": "^4.0.0",
     "aws-cdk-lib": "^2.160.0",
     "constructs": "^10.3.0"
   },

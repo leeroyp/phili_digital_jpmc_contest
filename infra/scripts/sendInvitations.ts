@@ -1,12 +1,18 @@
-import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
+import { Resend } from "resend";
 import * as fs from "fs";
 import * as path from "path";
 
 const FROM_EMAIL = process.env.FROM_EMAIL || "test@phili-digital.com";
 const LANDING_PAGE_URL = process.env.LANDING_PAGE_URL || "https://your-site.vercel.app";
 const RECIPIENTS_FILE = process.env.RECIPIENTS_FILE || "./recipients.json";
+const RESEND_API_KEY = process.env.RESEND_API_KEY!;
 
-const ses = new SESClient({ region: process.env.AWS_REGION || "us-east-1" });
+if (!RESEND_API_KEY) {
+  console.error("❌ RESEND_API_KEY environment variable is required");
+  process.exit(1);
+}
+
+const resend = new Resend(RESEND_API_KEY);
 
 interface Recipient {
   email: string;
@@ -141,20 +147,16 @@ Powered by Moneris
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
   `.trim();
 
-  const command = new SendEmailCommand({
-    Source: FROM_EMAIL,
-    Destination: { ToAddresses: [recipient.email] },
-    Message: {
-      Subject: { Data: "You're Invited to FIFA World Cup 26™ thanks to Visa" },
-      Body: {
-        Html: { Data: htmlBody },
-        Text: { Data: textBody },
-      },
-    },
-  });
+  const command = {
+    from: FROM_EMAIL,
+    to: [recipient.email],
+    subject: "You're Invited to FIFA World Cup 26™ thanks to Visa",
+    html: htmlBody,
+    text: textBody,
+  };
 
   try {
-    await ses.send(command);
+    await resend.emails.send(command);
     console.log(`✅ Sent invitation to ${recipient.email}`);
     return { success: true, email: recipient.email };
   } catch (error: any) {
@@ -192,7 +194,7 @@ async function main() {
     errors: [] as any[],
   };
 
-  // Send emails in batches to avoid rate limits (SES allows ~14 emails/sec)
+  // Send emails in batches to avoid rate limits (Resend recommends reasonable throttling)
   const BATCH_SIZE = 10;
   const DELAY_MS = 1000; // 1 second between batches
 

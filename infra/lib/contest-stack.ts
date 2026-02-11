@@ -33,15 +33,9 @@ export class ContestStack extends cdk.Stack {
       environment: {
         FROM_EMAIL: process.env.FROM_EMAIL ?? "replace-me@example.com",
         LANDING_PAGE_URL: process.env.LANDING_PAGE_URL ?? "https://phili-digital-jpmc-contest.vercel.app",
+        RESEND_API_KEY: process.env.RESEND_API_KEY ?? "replace-me-with-resend-api-key",
       },
     });
-
-    sendScheduledEmailFn.addToRolePolicy(
-      new iam.PolicyStatement({
-        actions: ["ses:SendEmail", "ses:SendRawEmail"],
-        resources: ["*"],
-      })
-    );
 
     const schedulerInvokeRole = new iam.Role(this, "SchedulerInvokeRole", {
       assumedBy: new iam.ServicePrincipal("scheduler.amazonaws.com"),
@@ -67,17 +61,11 @@ export class ContestStack extends cdk.Stack {
         SCHEDULE_GROUP: scheduleGroup.name!,
         SCHEDULER_TARGET_ROLE_ARN: schedulerInvokeRole.roleArn,
         SEND_EMAIL_LAMBDA_ARN: sendScheduledEmailFn.functionArn,
+        RESEND_API_KEY: process.env.RESEND_API_KEY ?? "replace-me-with-resend-api-key",
       },
     });
 
     table.grantReadWriteData(createEntryFn);
-
-    createEntryFn.addToRolePolicy(
-      new iam.PolicyStatement({
-        actions: ["ses:SendEmail", "ses:SendRawEmail"],
-        resources: ["*"],
-      })
-    );
 
     createEntryFn.addToRolePolicy(
       new iam.PolicyStatement({

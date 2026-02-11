@@ -1,8 +1,9 @@
-import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
+import { Resend } from "resend";
 
 const FROM_EMAIL = process.env.FROM_EMAIL!;
 const LANDING_PAGE_URL = process.env.LANDING_PAGE_URL!;
-const ses = new SESClient({});
+const RESEND_API_KEY = process.env.RESEND_API_KEY!;
+const resend = new Resend(RESEND_API_KEY);
 
 type Payload = {
   contestId: string;
@@ -119,17 +120,13 @@ export const handler = async (event: Payload) => {
     ? (locale === "fr" ? "Petit rappel : le tirage approche. Bonne chance!" : `Your match day seats at the FIFA World Cup 2026™ in Toronto are locked in, and the countdown to kickoff is on.\n\nFriday, June 12, 2026\nFIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)\nRecommended arrival 1 hour to kick off\nKick off at 3pm ET\n\nWe look forward to seeing you there!`)
     : (locale === "fr" ? "C'est le jour du tirage! Bonne chance!" : "It's draw day! Good luck!");
 
-  await ses.send(new SendEmailCommand({
-    Source: FROM_EMAIL,
-    Destination: { ToAddresses: [email] },
-    Message: { 
-      Subject: { Data: subject }, 
-      Body: { 
-        Html: { Data: htmlBody },
-        Text: { Data: textBody }
-      } 
-    },
-  }));
+  await resend.emails.send({
+    from: FROM_EMAIL,
+    to: [email],
+    subject: subject,
+    html: htmlBody,
+    text: textBody,
+  });
 
   return { ok: true };
 };

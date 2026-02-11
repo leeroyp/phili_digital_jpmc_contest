@@ -1,7 +1,7 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, TransactWriteCommand } from "@aws-sdk/lib-dynamodb";
-import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 import { SchedulerClient, CreateScheduleCommand } from "@aws-sdk/client-scheduler";
+import { Resend } from "resend";
 import crypto from "crypto";
 
 const TABLE_NAME = process.env.TABLE_NAME!;
@@ -11,9 +11,10 @@ const DEDUPE_SALT = process.env.DEDUPE_SALT!;
 const SCHEDULE_GROUP = process.env.SCHEDULE_GROUP!;
 const SCHEDULER_TARGET_ROLE_ARN = process.env.SCHEDULER_TARGET_ROLE_ARN!;
 const SEND_EMAIL_LAMBDA_ARN = process.env.SEND_EMAIL_LAMBDA_ARN!;
+const RESEND_API_KEY = process.env.RESEND_API_KEY!;
 
 const ddb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
-const ses = new SESClient({});
+const resend = new Resend(RESEND_API_KEY);
 const scheduler = new SchedulerClient({});
 
 function json(statusCode: number, body: any) {
@@ -104,7 +105,7 @@ export const handler = async (event: any) => {
     console.log("[1/4] DynamoDB write successful ✓");
 
     const locale = body.locale || "en";
-    console.log("[2/4] Sending confirmation email via SES...");
+    console.log("[2/4] Sending confirmation email via Resend...");
     try {
       const firstName = body.firstName || "Valued Customer";
       const htmlBody = `
@@ -184,22 +185,18 @@ Thank you for registering for the match. We look forward to seeing you at the FI
 Stay tuned for further details on your ticket.
       `.trim();
 
-      await ses.send(new SendEmailCommand({
-        Source: FROM_EMAIL,
-        Destination: { ToAddresses: [email] },
-        Message: {
-          Subject: { Data: locale === "fr" ? "Merci pour votre inscription" : "Thank You for Your Registration" },
-          Body: {
-            Html: { Data: htmlBody },
-            Text: { Data: textBody },
-          },
-        },
-      }));
-    } catch (sesErr: any) {
-      console.error("[2/4] SES email send failed:", sesErr?.message, sesErr?.code);
-      throw sesErr;
+      await resend.emails.send({
+        from: FROM_EMAIL,
+        to: [email],
+        subject: locale === "fr" ? "Merci pour votre inscription" : "Thank You for Your Registration",
+        html: htmlBody,
+        text: textBody,
+      });
+    } catch (resendErr: any) {
+      console.error("[2/4] Resend email send failed:", resendErr?.message, resendErr?.name);
+      throw resendErr;
     }
-    console.log("[2/4] SES email sent ✓");
+    console.log("[2/4] Resend email sent ✓");
 
     async function scheduleEmail(template: "reminder" | "draw", when: Date) {
       // Create schedule name under 64 char limit
