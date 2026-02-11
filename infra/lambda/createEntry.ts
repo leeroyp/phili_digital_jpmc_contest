@@ -142,11 +142,30 @@ export const handler = async (event: any) => {
               
               <!-- Body Copy -->
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Thank you for registering for the match. We look forward to seeing you at the FIFA World Cup 26<sup style="font-size: 10px;">TM</sup> thanks to Visa.
+                Thank you for registering for Canada's opening match! JPMC is proud to team up with Visa, a long-standing partner of FIFA, to host you at the FIFA World Cup 26<sup style="font-size: 10px;">TM</sup>.
               </p>
               
+              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 16px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
+                Please note, FIFA World Cup 26<sup style="font-size: 10px;">TM</sup> is a mobile-only entry tournament. Follow these steps to enjoy your experience:
+              </p>
+              
+              <ol style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; padding-left: 20px; font-size: 14px; font-weight: 400; line-height: 1.6;">
+                <li style="margin-bottom: 12px;">
+                  You will receive an email from visagoevents.com inviting you to download the application for iOS or Android.
+                </li>
+                <li style="margin-bottom: 12px;">
+                  Follow the steps indicated in the app to complete your registration, which needs to be done no later than May 13<sup>th</sup>, 2026.
+                </li>
+                <li style="margin-bottom: 12px;">
+                  Once you have created your account in Visa Go, you must create your FIFA Fan ID using the same email address you used in Visa Go.
+                </li>
+                <li style="margin-bottom: 12px;">
+                  The FIFA Fan ID app will show your tickets at least three days before your match.
+                </li>
+              </ol>
+              
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 30px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Stay tuned for further details on your ticket.
+                Get ready to be part of a once-in-a-lifetime experience!
               </p>
 
             </td>
@@ -178,11 +197,19 @@ export const handler = async (event: any) => {
       const textBody = `
 Hi ${firstName},
 
-YOU'RE REGISTERED for the FIFA World Cup 2026™ thanks to Visa
+Thank you for registering for Canada's opening match! JPMC is proud to team up with Visa, a long-standing partner of FIFA, to host you at the FIFA World Cup 26™.
 
-Thank you for registering for the match. We look forward to seeing you at the FIFA World Cup 26™ thanks to Visa.
+Please note, FIFA World Cup 26™ is a mobile-only entry tournament. Follow these steps to enjoy your experience:
 
-Stay tuned for further details on your ticket.
+1. You will receive an email from visagoevents.com inviting you to download the application for iOS or Android.
+
+2. Follow the steps indicated in the app to complete your registration, which needs to be done no later than May 13th, 2026.
+
+3. Once you have created your account in Visa Go, you must create your FIFA Fan ID using the same email address you used in Visa Go.
+
+4. The FIFA Fan ID app will show your tickets at least three days before your match.
+
+Get ready to be part of a once-in-a-lifetime experience!
       `.trim();
 
       await resend.emails.send({

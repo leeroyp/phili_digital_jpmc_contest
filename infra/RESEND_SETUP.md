@@ -28,17 +28,48 @@ This project now uses [Resend](https://resend.com) instead of AWS SES for sendin
 
 ⚠️ **Important**: Save this key securely - you won't be able to see it again!
 
-### 3. Verify Your Domain (Optional but Recommended)
+### 3. Verify Your Domain (Required for Production)
 
-For production use, you should verify your sending domain:
+For production use, you must verify your sending domain:
 
+#### Step 1: Add Domain in Resend
 1. Go to **Domains** in the Resend dashboard
 2. Click **Add Domain**
 3. Enter your domain (e.g., `phili-digital.com`)
-4. Add the DNS records shown (TXT, DKIM, etc.)
-5. Wait for verification (usually takes a few minutes)
+4. Resend will show you DNS records to add
 
-Once verified, you can send from any email address at that domain (e.g., `contest@phili-digital.com`).
+#### Step 2: Add DNS Records in Namecheap
+1. Log into your Namecheap account
+2. Go to **Domain List** → Select your domain → **Advanced DNS**
+3. Add the following records (all as **TXT Record** type):
+
+   **DKIM Record (for email authentication):**
+   - Type: `TXT Record`
+   - Host: `resend._domainkey` (copy exact value from Resend)
+   - Value: The long DKIM key from Resend (starts with `p=`)
+   - TTL: Automatic
+
+   **SPF Record (for sender verification):**
+   - Type: `TXT Record`
+   - Host: `@` or your domain name
+   - Value: `v=spf1 include:_spf.resend.com ~all`
+   - TTL: Automatic
+
+   **Optional - DMARC Record (for email policy):**
+   - Type: `TXT Record`
+   - Host: `_dmarc`
+   - Value: `v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com`
+   - TTL: Automatic
+
+4. Click **Save All Changes**
+
+#### Step 3: Verify in Resend
+1. Wait 10-30 minutes for DNS propagation
+2. Return to Resend dashboard → **Domains**
+3. Click **Verify** next to your domain
+4. Once verified, you can send from any address at that domain (e.g., `contest@phili-digital.com`)
+
+**Note:** You do NOT need to add MX records unless you're also receiving emails on this domain.
 
 ### 4. Configure Environment Variables
 

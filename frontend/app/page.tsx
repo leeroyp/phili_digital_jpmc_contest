@@ -291,7 +291,7 @@ export default function Page() {
                 margin: "0",
                 textAlign: "center",
               }}>
-                A match day seat awaits
+                Your Match Day Seat Awaits
               </h1>
               
               <p style={{
@@ -320,9 +320,9 @@ export default function Page() {
             <br/>
             FIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)
             <br/>
-            Recommended arrival 1 hour to kick off
-            <br/><br style={{ display: "block", content: '""', marginTop: "4px" }} />
-            Kickoff at 3pm ET
+            Kick off at 3pm ET
+            <br/>
+            (Recommended arrival time 90 minutes to kick off)
               </p>
               
               
@@ -374,7 +374,7 @@ export default function Page() {
 
               {/* Thank You Message */}
               <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "clamp(14px, 2.5vw, 22px)", lineHeight: "clamp(20px, 3.5vw, 32px)", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px", textAlign: "center" }}>
-                Thank you for registering for the FIFA World Cup 2026™ thanks to Visa. You will receive an email momentarily with more information on how to access your tickets.
+                Thank you for registering – we are delighted to have you join us for Canada's opening match. You will receive an email momentarily confirming your registration.
               </p>
 
               {/* JPMC Logo Only */}
@@ -805,55 +805,11 @@ export default function Page() {
               </button>
               {openFaq === 3 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p><strong>Toronto:</strong><br/>Toronto Stadium is located at Exhibition Place, just west of downtown Toronto along the waterfront.<br/>Address: 170 Princes' Blvd, Toronto, ON</p>
-                </div>
-              )}
-            </div>
-
-            {/* FAQ 4 */}
-            <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
-              <button
-                onClick={() => setOpenFaq(openFaq === 4 ? null : 4)}
-                style={{
-                  width: "100%",
-                  padding: "24px 0",
-                  textAlign: "left",
-                  backgroundColor: "transparent",
-                  border: "none",
-                  cursor: "pointer",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  fontSize: "clamp(16px, 2vw, 18px)",
-                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
-                  fontWeight: "600",
-                  color: "#ffffff"
-                }}
-              >
-                What's the best way to get to the Toronto Stadium?
-                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 4 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
-              </button>
-              {openFaq === 4 && (
-                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>Major events bring heavy traffic, road closures, and security perimeters. If you're planning to drive or use ride share/taxis, please leave extra time, expect delays, and arrive with patience — planning ahead is key to a smooth experience.</p>
+                  <p>Toronto Stadium is located at Exhibition Place, just west of downtown Toronto along the waterfront.</p>
+                  <p style={{ marginTop: "8px" }}>Address: 170 Princes' Blvd, Toronto, ON</p>
                   
-                  <p style={{ marginTop: "16px" }}><strong>Vancouver Stadium</strong></p>
-                  <p style={{ marginTop: "8px" }}><strong>Ride Share / Taxi</strong></p>
-                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
-                    <li>Available, but event‑day traffic restrictions apply</li>
-                    <li>Drop‑off points may require a short walk to the stadium</li>
-                  </ul>
-                  <p style={{ marginTop: "8px" }}><strong>Driving</strong></p>
-                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
-                    <li>Limited downtown parking</li>
-                    <li>Expect congestion and possible road closures</li>
-                    <li>Plan to park farther away and walk</li>
-                  </ul>
-                  <p style={{ marginTop: "8px" }}><strong>Public Transit (alternative)</strong></p>
-                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
-                    <li>Accessible via Stadium–Chinatown or Vancouver City Centre stations</li>
-                  </ul>
-
+                  <p style={{ marginTop: "16px" }}>Major events bring heavy traffic, road closures, and security perimeters. If you're planning to drive or use ride share/taxis, please leave extra time, expect delays, and arrive with patience — planning ahead is key to a smooth experience.</p>
+                  
                   <p style={{ marginTop: "16px" }}><strong>Toronto Stadium</strong></p>
                   <p style={{ marginTop: "8px" }}><strong>Ride Share / Taxi</strong></p>
                   <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
@@ -881,10 +837,10 @@ export default function Page() {
               )}
             </div>
 
-            {/* FAQ 5 */}
+            {/* FAQ 4 */}
             <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
               <button
-                onClick={() => setOpenFaq(openFaq === 5 ? null : 5)}
+                onClick={() => setOpenFaq(openFaq === 4 ? null : 4)}
                 style={{
                   width: "100%",
                   padding: "24px 0",
@@ -902,11 +858,11 @@ export default function Page() {
                 }}
               >
                 Is parking available at the stadium?
-                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 5 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
+                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 4 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
-              {openFaq === 5 && (
+              {openFaq === 4 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>Yes, general parking pass sales for FIFA World Cup 2026™ will be available closer to the time of the match. For specific information, visit the official FIFA World Cup 2026™ parking website to stay up to date on when parking is available.</p>
+                  <p>Yes, general parking passes sales for FIFA World Cup 2026™ will be available closer to the time of the match. For specific information, visit the official FIFA World Cup 2026™ parking website to stay up to date of when parking is available.</p>
                   <p style={{ marginTop: "8px" }}><a href="https://www.justpark.com/us/event-parking/fifa-world-cup-2026/toronto-stadium/" target="_blank" rel="noopener noreferrer" style={{ color: "#f2d76b", textDecoration: "underline" }}>Toronto Stadium Parking</a></p>
                 </div>
               )}
@@ -963,11 +919,41 @@ export default function Page() {
                 }}
               >
                 How early should I arrive at the stadium?
+                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 6 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
+              </button>
+              {openFaq === 6 && (
+                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
+                  <p>Guests should plan to arrive at least 90 minutes before kickoff to allow time for security screening, navigate any event‑day crowds, and enjoy the pre‑match atmosphere.</p>
+                </div>
+              )}
+            </div>
+
+            {/* FAQ 7 */}
+            <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
+              <button
+                onClick={() => setOpenFaq(openFaq === 7 ? null : 7)}
+                style={{
+                  width: "100%",
+                  padding: "24px 0",
+                  textAlign: "left",
+                  backgroundColor: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "clamp(16px, 2vw, 18px)",
+                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
+                  fontWeight: "600",
+                  color: "#ffffff"
+                }}
+              >
+                What ID or documents should I bring?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 7 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 7 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>Guests should plan to arrive at least 90 minutes before kickoff to allow time for security screening, navigate any event‑day crowds, and enjoy the pre‑match atmosphere.</p>
+                  <p>You should bring your digital match ticket and a government‑issued photo ID, ideally with a name that matches your ticket. International visitors are encouraged to carry a copy of their passport in case it is needed for verification.</p>
                 </div>
               )}
             </div>
@@ -992,17 +978,29 @@ export default function Page() {
                   color: "#ffffff"
                 }}
               >
-                What ID or documents should I bring?
+                Are there bag or personal item restrictions?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 8 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 8 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>You should bring your digital match ticket and a government‑issued photo ID, ideally with a name that matches your ticket. International visitors are encouraged to carry a copy of their passport in case it is needed for verification.</p>
+                  <p>To keep everyone safe and moving through security quickly, fans are encouraged to travel light.</p>
+                  <p style={{ marginTop: "12px" }}>Ticket Holders are only permitted to bring certain types of bags into Stadiums. These approved bags must be clear and made of plastic, vinyl, or PVC material. Those bags must not exceed 12 inches x 6 inches x 12 inches (30 cm x 30 cm x 15 cm). Additionally, small clutch purses or wallets approximately the size of a hand are allowed, even if not clear and no larger than 4.5 inches x 6.5 inches (or 11cm x 16.5cm).</p>
+                  <p style={{ marginTop: "12px" }}>FIFA has strict rules regarding bags and only small personal bags are typically permitted. Larger bags such as backpacks or oversized purses are not allowed, and most venues do not offer bag‑check services, so guests should bring only essential items.</p>
+                  <p style={{ marginTop: "12px" }}>Please refer to the <a href="https://digitalhub.fifa.com/m/50ebae81c412b7d5/original/FIFA-World-Cup-2026-Stadium-Code-of-Conduct.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#f2d76b", textDecoration: "underline" }}>Stadium Code of Conduct</a> for a complete list of permitted and prohibited items. In addition to this list, FIFA, stadium authorities, and/or government authorities reserve the right to make the final decision on whether any item brought to or into the stadium is prohibited.</p>
+                  
+                  <p style={{ marginTop: "16px" }}><strong>Permitted items:</strong></p>
+                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
+                    <li><strong>Small personal items</strong> — Phone, wallet, keys</li>
+                    <li><strong>Medically necessary items</strong> — Including prescribed medication</li>
+                    <li><strong>Accessibility or caregiving items</strong></li>
+                    <li><strong>Small flags or signs</strong> — Nonpolitical, nonoffensive, noncommercial; must not block views or walkways</li>
+                  </ul>
+                  <p style={{ marginTop: "8px" }}>All permitted items are subject to inspection.</p>
                 </div>
               )}
             </div>
 
-            {/* FAQ 9 */}
+           {/* FAQ 9 */}
             <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
               <button
                 onClick={() => setOpenFaq(openFaq === 9 ? null : 9)}
@@ -1022,24 +1020,24 @@ export default function Page() {
                   color: "#ffffff"
                 }}
               >
-                Are there bag or personal item restrictions?
+                What items are prohibited inside the stadium?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 9 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 9 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>To keep everyone safe and moving through security quickly, fans are encouraged to travel light.</p>
-                  <p style={{ marginTop: "12px" }}>Ticket holders are only permitted to bring certain types of bags into stadiums. These approved bags must be clear and made of plastic, vinyl, or PVC material. Those bags must not exceed 12" x 6" x 12" (30 cm x 30 cm x 15 cm). Additionally, small clutch purses or wallets approximately the size of a hand are allowed, even if not clear, and no larger than 4.5" x 6.5" (11 cm x 16.5 cm).</p>
-                  <p style={{ marginTop: "12px" }}>FIFA has strict rules regarding bags and only small personal bags are typically permitted. Larger bags such as backpacks or oversized purses are not allowed, and most venues do not offer bag‑check services, so guests should bring only essential items.</p>
-                  <p style={{ marginTop: "12px" }}>Please refer to the <a href="https://digitalhub.fifa.com/m/50ebae81c412b7d5/original/FIFA-World-Cup-2026-Stadium-Code-of-Conduct.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#f2d76b", textDecoration: "underline" }}>Stadium Code of Conduct</a> for a complete list of permitted and prohibited items. In addition to this list, FIFA, stadium authorities, and/or government authorities reserve the right to make the final decision on whether any item brought to or into the stadium is prohibited.</p>
-                  
-                  <p style={{ marginTop: "16px" }}><strong>Permitted items:</strong></p>
-                  <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
-                    <li>Small personal items — phone, wallet, keys</li>
-                    <li>Medically necessary items — including prescribed medication</li>
-                    <li>Accessibility or caregiving items</li>
-                    <li>Small flags or signs — non‑political, non‑offensive, non‑commercial; must not block views or walkways</li>
+                  <ul style={{ paddingLeft: "20px" }}>
+                    <li>Outside food and beverage</li>
+                    <li>Bags larger than 30 cm x 40 cm</li>
+                    <li>Weapons or dangerous objects</li>
+                    <li>Fireworks, flares, smoke devices, or pyrotechnics</li>
+                    <li>Alcohol or illegal substances</li>
+                    <li>Glass, metal, or hard objects</li>
+                    <li>Professional recording or broadcast equipment (unless authorized)</li>
+                    <li>Musical instruments or noisemaking devices (unless approved)</li>
+                    <li>Items that block views or disrupt stadium operations</li>
+                    <li>Political, offensive, discriminatory, or commercial materials</li>
                   </ul>
-                  <p style={{ marginTop: "8px" }}>All permitted items are subject to inspection.</p>
+                  <p style={{ marginTop: "12px" }}>All items are subject to inspection. FIFA, stadium operators, and local authorities reserve the right to refuse entry for any item that is deemed unsafe, inappropriate, or disruptive, even if it is not specifically listed above.</p>
                 </div>
               )}
             </div>
@@ -1064,24 +1062,12 @@ export default function Page() {
                   color: "#ffffff"
                 }}
               >
-                What items are prohibited inside the stadium?
+                Can I leave and reenter the stadium?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 10 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 10 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <ul style={{ paddingLeft: "20px" }}>
-                    <li>Outside food and beverage</li>
-                    <li>Bags larger than 30 cm x 40 cm</li>
-                    <li>Weapons or dangerous objects</li>
-                    <li>Fireworks, flares, smoke devices, or pyrotechnics</li>
-                    <li>Alcohol or illegal substances</li>
-                    <li>Glass, metal, or hard objects</li>
-                    <li>Professional recording or broadcast equipment (unless authorized)</li>
-                    <li>Musical instruments or noisemaking devices (unless approved)</li>
-                    <li>Items that block views or disrupt stadium operations</li>
-                    <li>Political, offensive, discriminatory, or commercial materials</li>
-                  </ul>
-                  <p style={{ marginTop: "12px" }}>All items are subject to inspection. FIFA, stadium operators, and local authorities reserve the right to refuse entry for any item that is deemed unsafe, inappropriate, or disruptive, even if it is not specifically listed above.</p>
+                  <p>No. Re‑entry is not allowed once you exit the secure stadium area, so please ensure you have everything you need before entering.</p>
                 </div>
               )}
             </div>
@@ -1106,40 +1092,10 @@ export default function Page() {
                   color: "#ffffff"
                 }}
               >
-                Can I leave and re‑enter the stadium?
+                Will food and drinks be available inside the stadium?
                 <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 11 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
               </button>
               {openFaq === 11 && (
-                <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
-                  <p>No. Re‑entry is not allowed once you exit the secure stadium area, so please ensure you have everything you need before entering.</p>
-                </div>
-              )}
-            </div>
-
-            {/* FAQ 12 */}
-            <div style={{ borderBottom: "1px solid rgba(255,255,255,0.3)", marginBottom: "0" }}>
-              <button
-                onClick={() => setOpenFaq(openFaq === 12 ? null : 12)}
-                style={{
-                  width: "100%",
-                  padding: "24px 0",
-                  textAlign: "left",
-                  backgroundColor: "transparent",
-                  border: "none",
-                  cursor: "pointer",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  fontSize: "clamp(16px, 2vw, 18px)",
-                  fontFamily: '"FWC26-CondensedBlack", sans-serif',
-                  fontWeight: "600",
-                  color: "#ffffff"
-                }}
-              >
-                Will food and drinks be available inside the stadium?
-                <span style={{ fontSize: "24px", transition: "transform 0.3s", transform: openFaq === 12 ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
-              </button>
-              {openFaq === 12 && (
                 <div style={{ paddingBottom: "24px", color: "#ffffff", opacity: 0.9, lineHeight: "1.6", fontFamily: '"FWC26-NormalThin", sans-serif' }}>
                   <p>Yes. A full selection of standard stadium food and beverages will be available for purchase throughout the match.</p>
                   <p style={{ marginTop: "12px" }}>The stadium operates as a cashless venue — all purchases must be made using credit or debit cards.</p>

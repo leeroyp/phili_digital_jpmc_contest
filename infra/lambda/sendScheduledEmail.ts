@@ -67,7 +67,11 @@ export const handler = async (event: Payload) => {
               
               <!-- Body Copy -->
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Your match day seats at the FIFA World Cup 2026<sup style="font-size: 10px;">TM</sup> in Toronto are locked in, and the countdown to kickoff is on.
+                The countdown to kickoff is on! Your opening match day seats at the FIFA World Cup 26<sup style="font-size: 10px;">TM</sup> in Toronto are locked in, thanks to Visa.
+              </p>
+              
+              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
+                Please keep an eye out for your Match Day Kit, arriving ahead of match day. Curated together by Visa and JPMC, this keepsake is designed to kick off the excitement and get you ready to cheer on Canada at the FIFA World Cup 26<sup style="font-size: 10px;">TM</sup>!
               </p>
               
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 10px 0; font-size: 14px; font-weight: 700; line-height: 1.6;">
@@ -79,15 +83,12 @@ export const handler = async (event: Payload) => {
               </p>
               
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 10px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Recommended arrival 1 hour to kick off
-              </p>
-              
-              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Kick off at 3pm ET
+                Kick off at 3pm ET<br/>
+                (Recommended arrival time 90 minutes to kick off)
               </p>
               
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 30px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                We look forward to seeing you there!
+                We look forward to hosting you!
               </p>
 
             </td>
@@ -117,7 +118,7 @@ export const handler = async (event: Payload) => {
   `;
 
   const textBody = template === "reminder"
-    ? (locale === "fr" ? "Petit rappel : le tirage approche. Bonne chance!" : `Your match day seats at the FIFA World Cup 2026™ in Toronto are locked in, and the countdown to kickoff is on.\n\nFriday, June 12, 2026\nFIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)\nRecommended arrival 1 hour to kick off\nKick off at 3pm ET\n\nWe look forward to seeing you there!`)
+    ? (locale === "fr" ? "Petit rappel : le tirage approche. Bonne chance!" : `Hi ${firstName || ''},\n\nThe countdown to kickoff is on! Your opening match day seats at the FIFA World Cup 26™ in Toronto are locked in, thanks to Visa.\n\nPlease keep an eye out for your Match Day Kit, arriving ahead of match day. Curated together by Visa and JPMC, this keepsake is designed to kick off the excitement and get you ready to cheer on Canada at the FIFA World Cup 26™!\n\nFriday, June 12, 2026\nFIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)\nKick off at 3pm ET\n(Recommended arrival time 90 minutes to kick off)\n\nWe look forward to hosting you!`)
     : (locale === "fr" ? "C'est le jour du tirage! Bonne chance!" : "It's draw day! Good luck!");
 
   await resend.emails.send({

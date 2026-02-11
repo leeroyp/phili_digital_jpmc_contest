@@ -57,11 +57,7 @@ async function sendInvitationEmail(recipient: Recipient) {
               
               <!-- Body Copy -->
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Few will witness the FIFA World Cup 2026<sup style="font-size: 10px;">TM</sup> live in Toronto.
-              </p>
-              
-              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                RSVP now to secure your place at football's biggest stage.
+                As a valued JPMC client, you and a guest are invited to experience the thrill of the FIFA World Cup 26<sup style="font-size: 10px;">™</sup> live in Toronto, thanks to Visa. RSVP now to secure your seat at Canada's opening match, and be part of a moment that will define history.
               </p>
               
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 10px 0; font-size: 14px; font-weight: 700; line-height: 1.6;">
@@ -72,20 +68,17 @@ async function sendInvitationEmail(recipient: Recipient) {
                 FIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)
               </p>
               
-              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 10px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Recommended arrival 1 hour to kick off
-              </p>
-              
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Kick off at 3pm ET
+                Kick off at 3pm ET<br/>
+                (Recommended arrival time 90 minutes to kick off)
               </p>
               
-              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 10px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                Stay tuned for more details and additional match day information.
+              <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 20px 0; font-size: 14px; font-weight: 700; line-height: 1.6;">
+                RSVP Deadline: April 9, 2026
               </p>
               
               <p style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin: 0 0 30px 0; font-size: 14px; font-weight: 400; line-height: 1.6;">
-                We look forward to seeing you there!
+                As always, we are proud to create moments like this for our JPMC clients. We look forward to hosting you!
               </p>
               
               <!-- RSVP Button -->
@@ -123,25 +116,20 @@ async function sendInvitationEmail(recipient: Recipient) {
   `;
 
   const textBody = `
-Hello!
+Hi ${firstName},
 
-YOU'RE INVITED to FIFA World Cup 26™ thanks to Visa
-
-Few will witness the FIFA World Cup 2026™ live in Toronto.
-
-RSVP now to secure your place at football's biggest stage.
+As a valued JPMC client, you and a guest are invited to experience the thrill of the FIFA World Cup 26™ live in Toronto, thanks to Visa. RSVP now to secure your seat at Canada's opening match, and be part of a moment that will define history.
 
 Friday, June 12, 2026
 FIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)
-Recommended arrival 1 hour to kick off
 Kick off at 3pm ET
+(Recommended arrival time 90 minutes to kick off)
 
-Stay tuned for more details and additional match day information.
-We look forward to seeing you there!
+RSVP Deadline: April 9, 2026
+
+As always, we are proud to create moments like this for our JPMC clients. We look forward to hosting you!
 
 RSVP: ${LANDING_PAGE_URL}
-
-Powered by Moneris
 
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
