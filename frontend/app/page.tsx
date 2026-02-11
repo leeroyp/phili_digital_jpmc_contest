@@ -621,7 +621,7 @@ export default function Page() {
               }} />
           </label>
           <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
-            Jersey Size
+            Preferred Jersey Size
             <select value={form.jerseySize} onChange={(e) => onChange("jerseySize", e.target.value)} required
               style={{ 
                 display: "block", 
@@ -636,14 +636,23 @@ export default function Page() {
                 cursor: "pointer"
               }}>
               <option value="">Select size</option>
-              <option value="XS">XS</option>
               <option value="S">S</option>
               <option value="M">M</option>
               <option value="L">L</option>
               <option value="XL">XL</option>
               <option value="2XL">2XL</option>
-              <option value="3XL">3XL</option>
             </select>
+            <span style={{ 
+              display: "block", 
+              fontSize: "11px", 
+              fontWeight: "300", 
+              marginTop: "6px", 
+              color: "rgba(255, 255, 255, 0.8)",
+              fontFamily: '"FWC26-NormalThin", sans-serif',
+              lineHeight: "1.4"
+            }}>
+              Please note, jerseys are only available in men's fit. Sizes are limited, we'll do our best to provide you with your requested size.
+            </span>
           </label>
         </div>
         
