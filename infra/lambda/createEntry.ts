@@ -215,7 +215,7 @@ Get ready to be part of a once-in-a-lifetime experience!
       await resend.emails.send({
         from: FROM_EMAIL,
         to: [email],
-        subject: locale === "fr" ? "Merci pour votre inscription" : "Thank You for Your Registration",
+        subject: locale === "fr" ? "Merci pour votre inscription" : "You're going to the FIFA World Cup 26™!",
         html: htmlBody,
         text: textBody,
       });
