@@ -18,7 +18,7 @@ export const handler = async (event: Payload) => {
   const { email, firstName, locale, template } = event;
 
   const subject = template === "reminder"
-    ? (locale === "fr" ? "Rappel du tirage" : "Draw Reminder")
+    ? (locale === "fr" ? "Rappel du tirage" : "Countdown to Kickoff!")
     : (locale === "fr" ? "Jour du tirage" : "Draw Day");
 
   const heroHeading = template === "reminder"
