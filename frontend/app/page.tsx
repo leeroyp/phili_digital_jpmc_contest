@@ -417,7 +417,7 @@ export default function Page() {
               marginBottom: "32px", 
               color: "#ffffff",
               textAlign: "center"
-            }}>RSVP for you and your guest by May 9, 2026.</h2>
+            }}>RSVP for you and your guest by April 9, 2026.</h2>
 
             <form onSubmit={onSubmit} style={{ display: "grid", gap: 20 }}>
         <style jsx>{`
