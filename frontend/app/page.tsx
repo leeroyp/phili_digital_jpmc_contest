@@ -352,7 +352,7 @@ export default function Page() {
               >
                 RSVP
               </button>
-              <img src="/JPMC_Logo_Standard_Black_RGB.png" alt="JPMorgan Chase" style={{ height: "clamp(24px, 3vw, 36px)", width: "auto" }} />
+              <img src="/JPMC_Logo_Standard_Black_RGB.png" alt="JPMorgan Chase" style={{ height: "auto", width: "clamp(180px, 20vw, 220px)" }} />
             </div>
           </div>
         )}
@@ -379,7 +379,7 @@ export default function Page() {
 
               {/* JPMC Logo Only */}
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <img src="/JPMC_Logo_Standard_White_RGB.png" alt="J.P. Morgan" style={{ height: "clamp(24px, 3vw, 36px)", width: "auto" }} />
+                <img src="/JPMC_Logo_Standard_White_RGB.png" alt="J.P. Morgan" style={{ height: "auto", width: "clamp(180px, 20vw, 220px)" }} />
               </div>
             </div>
           </div>
