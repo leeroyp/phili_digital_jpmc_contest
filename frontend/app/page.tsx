@@ -369,7 +369,7 @@ export default function Page() {
             <div className="hero-content" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               {/* VISA | FIFA Logo */}
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", marginBottom: "clamp(24px, 4vw, 48px)" }}>
-                <img src="/visa-logo-hero.png" alt="VISA | FIFA" style={{ height: "clamp(56px, 10vw, 100px)", width: "auto" }} />
+                <img src="/visa-logo-hero.png" alt="VISA | FIFA" style={{ height: "clamp(80px, 12vw, 140px)", width: "auto" }} />
               </div>
 
               {/* Thank You Message */}
