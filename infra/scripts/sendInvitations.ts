@@ -138,7 +138,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
   const command = {
     from: FROM_EMAIL,
     to: [recipient.email],
-    subject: "You're Invited to FIFA World Cup 26™ thanks to Visa",
+    subject: "Your seats to the FIFA World Cup 26™ await!",
     html: htmlBody,
     text: textBody,
   };
