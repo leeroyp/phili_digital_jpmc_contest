@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::385487773037:role/cdk-hnb659fds-deploy-role-385487773037-ca-central-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::385487773037:role/cdk-hnb659fds-cfn-exec-role-385487773037-ca-central-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-385487773037-ca-central-1/6d0fe5484516eb6b810873218fc1d76be9b42dc7af5fefda6be95fcf28db064a.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-385487773037-ca-central-1/ec62febd84ab7cbdfd40db7e8babc8a7fff29e71c6fdd1f5430c09f0c7962efc.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -58,12 +58,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "SendScheduledEmailFnServiceRole3E0A0A4F"
-          }
-        ],
-        "/ContestStack/SendScheduledEmailFn/ServiceRole/DefaultPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "SendScheduledEmailFnServiceRoleDefaultPolicy8D48C652"
           }
         ],
         "/ContestStack/SendScheduledEmailFn/Resource": [

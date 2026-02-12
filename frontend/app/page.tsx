@@ -303,7 +303,7 @@ export default function Page() {
                 maxWidth: "100%",
                 textAlign: "center",
               }}>
-                Step into an experience few will ever witness. Be part of history at football’s biggest stage.
+                Step into a once in a lifetime FIFA World Cup 26<sup>TM</sup> experience curated for JPMC clients, thanks to Visa. This is your chance to be a part of a moment that will live on in history. 
               </p>
               <p style={{
                 fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif',
@@ -320,7 +320,7 @@ export default function Page() {
             <br/>
             FIFA Toronto Stadium (70 Princes' Boulevard, Toronto, ON)
             <br/>
-            Kick off at 3pm ET
+            Kick off at <strong>3pm ET</strong>
             <br/>
             (Recommended arrival time 90 minutes to kick off)
               </p>
@@ -374,7 +374,7 @@ export default function Page() {
 
               {/* Thank You Message */}
               <p style={{ fontFamily: '"FWC26-NormalThin", "Inter", Helvetica, Arial, sans-serif', fontSize: "clamp(14px, 2.5vw, 22px)", lineHeight: "clamp(20px, 3.5vw, 32px)", letterSpacing: "0", fontWeight: "300", color: "#ffffff", marginBottom: "clamp(24px, 4vw, 40px)", maxWidth: "620px", textAlign: "center" }}>
-                Thank you for registering – we are delighted to have you join us for Canada's opening match. You will receive an email momentarily confirming your registration.
+                Thank you for registering – we are delighted to have you join us for Canada’s opening match. You will receive an email momentarily confirming your registration. 
               </p>
 
               {/* JPMC Logo Only */}
@@ -417,7 +417,7 @@ export default function Page() {
               marginBottom: "32px", 
               color: "#ffffff",
               textAlign: "center"
-            }}>RSVP for you and your guest by May 7, 2026.</h2>
+            }}>RSVP for you and your guest by May 9, 2026.</h2>
 
             <form onSubmit={onSubmit} style={{ display: "grid", gap: 20 }}>
         <style jsx>{`
@@ -660,7 +660,7 @@ export default function Page() {
         <label style={{ display: "flex", gap: 12, alignItems: "flex-start", color: "#ffffff", fontSize: "13px", marginTop: "8px", lineHeight: "1.5", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
           <input type="checkbox" checked={form.optIn} onChange={(e) => onChange("optIn", e.target.checked)} 
             style={{ width: "18px", height: "18px", cursor: "pointer", marginTop: "2px", flexShrink: 0 }} />
-          <span>Yes, it's okay to send me text messages including confirmations, changes, updates, and/or promotions. Message frequency varies. Message and data rates may apply. Reply STOP to cancel. View our terms of service & privacy policy.</span>
+          <span>Yes, it’s okay to send me text messages including confirmations, changes, and updates,. Message frequency varies. Message and data rates may apply. Reply STOP to cancel. View our terms of service & privacy policy.[LC1] </span>
         </label>
 
         {error && <div style={{ background: "rgba(255, 255, 255, 0.9)", color: "#C8102E", padding: 16, borderRadius: 8, fontWeight: "600" }}>{error}</div>}
