@@ -17,6 +17,7 @@ type FormState = {
   province: string;
   postalCode: string;
   jerseySize: string;
+  guestJerseySize: string;
   optIn: boolean;
 };
 
@@ -44,6 +45,7 @@ export default function Page() {
     province: "",
     postalCode: "",
     jerseySize: "",
+    guestJerseySize: "",
     optIn: false,
   });
 
@@ -623,6 +625,43 @@ export default function Page() {
           <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
             Preferred Jersey Size
             <select value={form.jerseySize} onChange={(e) => onChange("jerseySize", e.target.value)} required
+              style={{ 
+                display: "block", 
+                width: "96%", 
+                padding: "12px 16px",
+                marginTop: "8px",
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                borderRadius: 8,
+                fontSize: "16px",
+                color: "#333",
+                cursor: "pointer"
+              }}>
+              <option value="">Select size</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="2XL">2XL</option>
+            </select>
+            <span style={{ 
+              display: "block", 
+              fontSize: "11px", 
+              fontWeight: "300", 
+              marginTop: "6px", 
+              color: "rgba(255, 255, 255, 0.8)",
+              fontFamily: '"FWC26-NormalThin", sans-serif',
+              lineHeight: "1.4"
+            }}>
+              Please note, jerseys are only available in men's fit. Sizes are limited, we'll do our best to provide you with your requested size.
+            </span>
+          </label>
+        </div>
+
+        <div className="name-row" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 20 }}>
+          <label style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
+            Guest Preferred Jersey Size
+            <select value={form.guestJerseySize} onChange={(e) => onChange("guestJerseySize", e.target.value)}
               style={{ 
                 display: "block", 
                 width: "96%", 
