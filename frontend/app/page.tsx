@@ -660,7 +660,7 @@ export default function Page() {
         <label style={{ display: "flex", gap: 12, alignItems: "flex-start", color: "#ffffff", fontSize: "13px", marginTop: "8px", lineHeight: "1.5", fontFamily: '"FWC26-NormalRegular", sans-serif' }}>
           <input type="checkbox" checked={form.optIn} onChange={(e) => onChange("optIn", e.target.checked)} 
             style={{ width: "18px", height: "18px", cursor: "pointer", marginTop: "2px", flexShrink: 0 }} />
-          <span>Yes, it’s okay to send me text messages including confirmations, changes, and updates,. Message frequency varies. Message and data rates may apply. Reply STOP to cancel. View our terms of service & privacy policy.[LC1] </span>
+          <span>Yes, I confirm I would like to receive communication about confirmations, changes or updates in regards with this program.</span>
         </label>
 
         {error && <div style={{ background: "rgba(255, 255, 255, 0.9)", color: "#C8102E", padding: 16, borderRadius: 8, fontWeight: "600" }}>{error}</div>}
@@ -1185,7 +1185,7 @@ export default function Page() {
           justifyContent: "space-between",
           gap: "20px"
         }}>
-          <p style={{ flex: 1, margin: 0 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+          <p style={{ flex: 1, margin: 0 }}>© 2025 JPMorgan. All rights reserved.<br/>Visa Trademark of Visa Int., used under licence. © 2025 VISA Canada. All rights reserved.<br/>FIFA and FIFA World Cup™ are trademarks of FIFA. All rights reserved.</p>
         </div>
       </main>
     </>
